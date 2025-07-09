@@ -1,0 +1,1157 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ReviewDashboard" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="clr-namespace:OCS_GenerateReportOutput;assembly=OCS_GenerateReportOutput" xmlns:s="clr-namespace:SanityReport_TCFiltering;assembly=SanityReport_TCFiltering" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_str_TaxYear" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_TaxSoftware" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_AddDoc" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_LastName" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_Functionality" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_UltraTaxSoftwareAccountNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_UltraTaxSoftwareAliasforDataLocation" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_ResidentState" Type="InArgument(x:String)" />
+    <x:Property Name="io_dt_TestSummaryReport" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <this:ReviewDashboard.in_str_Functionality>
+    <InArgument x:TypeArguments="x:String" />
+  </this:ReviewDashboard.in_str_Functionality>
+  <this:ReviewDashboard.in_str_UltraTaxSoftwareAccountNumber>
+    <InArgument x:TypeArguments="x:String" />
+  </this:ReviewDashboard.in_str_UltraTaxSoftwareAccountNumber>
+  <this:ReviewDashboard.in_str_UltraTaxSoftwareAliasforDataLocation>
+    <InArgument x:TypeArguments="x:String" />
+  </this:ReviewDashboard.in_str_UltraTaxSoftwareAliasforDataLocation>
+  <this:ReviewDashboard.in_str_ResidentState>
+    <InArgument x:TypeArguments="x:String" />
+  </this:ReviewDashboard.in_str_ResidentState>
+  <this:ReviewDashboard.io_dt_TestSummaryReport>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:ReviewDashboard.io_dt_TestSummaryReport>
+  <this:ReviewDashboard.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:ReviewDashboard.in_Config>
+  <this:ReviewDashboard.in_TransactionItem>
+    <InArgument x:TypeArguments="ui:QueueItem" />
+  </this:ReviewDashboard.in_TransactionItem>
+  <sap:VirtualizedContainerService.HintSize>1408.8,2209.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.Testing</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>SanityReport_TCFiltering</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>OCS_GenerateReportOutput</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>SanityReport_TCFiltering</AssemblyReference>
+      <AssemblyReference>OCS_GenerateReportOutput</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1156,2023.2" sap2010:WorkflowViewState.IdRef="Sequence_613">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Reviewer Dashboard" sap:VirtualizedContainerService.HintSize="558.4,2000" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524.8,1760" sap2010:WorkflowViewState.IdRef="Sequence_614">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NSelectItem ContinueOnError="True" DisplayName="Select Item '2022'" sap:VirtualizedContainerService.HintSize="491.2,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_62" Item="[in_str_TaxYear]" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="20" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="3">
+                  <x:String>2020</x:String>
+                  <x:String>2021</x:String>
+                  <x:String>2022</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" DesignTimeRectangle="308, 269, 80, 32" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='DIV' type='' class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input' aaname='2022' check:innerText='2022' /&gt;" Guid="06566514-79e3-41f5-959e-9eac23585336" ImageBase64="" InformativeScreenshot="858ca2ad57b0ba84111286c5e4a1c164.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Visible">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="109, 223, 1186, 60" ElementType="Text" FullSelectorArgument="&lt;webctrl id='search-results-header' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-results-header' tag='H2' type='' class='iUW2t' aaname='Search Clients' check:innerText='Search Clients' /&gt;" Guid="5ed65491-2de4-4d01-972a-6a3571a2a754" ImageBase64="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" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="491.2,176" sap2010:WorkflowViewState.IdRef="LogMessage_347" Level="Info" Message="[&quot;Tax Year &quot; +in_str_TaxYear + &quot; is Selected&quot;]" />
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="491.2,1056" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="6">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="449.6,488" sap2010:WorkflowViewState.IdRef="Sequence_585">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="10" DisplayName="Type Into 'Search by'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Text="[in_str_FirstName+ &quot; &quot;+in_str_LastName]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard" CVScreenId="11f7570c-64f4-4583-a1f5-ef3534cc2e86" DesignTimeRectangle="308, 371, 489, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='search-client' tag='INPUT' /&gt;" Guid="eb48da99-d8ca-49b3-9712-03458e70b155" InformativeScreenshot="5fe2970177b52c82bf0d852d10b69be9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="353.6,177.6" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_75" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <uix:NCheckState DisplayName="Check App State 'cchddnov1, cchtaxabc'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="449.6,376" sap2010:WorkflowViewState.IdRef="NCheckState_57" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="40" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'cchddnov1, cchtaxabc'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_327" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CvTextArea="164, 535, 187, 18" CvTextArgument="cchddnov1, cchtaxabc" CvType="Text" DesignTimeRectangle="153, 509, 232, 69" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl aria-role='gridcell' idx='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='gridcell' type='' tag='DIV' class='MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft MuiDataGrid-withBorderColor' aaname='' check:innerText='cchddnov1, cchtaxabc' /&gt;" Guid="3ef6b218-a384-4b99-bf93-a264bf680f4e" ImageBase64="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" InformativeScreenshot="b921b611cbaa8b6299362c3ceb08596b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_587">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CvTextArea="164, 534, 187, 20" CvTextArgument="cchddnov1, cchtaxabc" CvType="Text" DesignTimeRectangle="153, 509, 232, 69" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl aria-role='gridcell' idx='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='gridcell' type='' tag='DIV' class='MuiDataGrid-cell--withRenderer MuiDataGrid-cell MuiDataGrid-cell--textLeft MuiDataGrid-withBorderColor' aaname='' check:innerText='cchddnov1, cchtaxabc' /&gt;" Guid="170c1a24-04fa-4943-8622-a3331eda0f78" ImageBase64="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" InformativeScreenshot="d45d83374dcfa60d403ce3d8a397720d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="2">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="8" DisplayName="Click 'DeliverablesPrepare Del…'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_328" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1248919" CVScreenId="77ca4716-6479-41e3-aa4f-60119bf3a4f3" DesignTimeRectangle="128, 337, 398, 88" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="&lt;webctrl tag='LI' /&gt;" Guid="ef229835-3fd3-42a0-8d1b-c50fe7754513" InformativeScreenshot="6636d027054297d97d222f3dfe3cff54.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean" />
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_356" Message="[&quot;TC_20 : Verify that  documents uploaded with Split Deliverables : Pass&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_1" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_20&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <s:SanityReport_TCFiltering.in_strComments>
+                <InArgument x:TypeArguments="x:Object" />
+              </s:SanityReport_TCFiltering.in_strComments>
+            </s:SanityReport_TCFiltering>
+            <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="491.2,56.8" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_1" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </o:OCS_GenerateReportOutput>
+            <If Condition="[in_str_Functionality = &quot;Fetch&quot;]" sap:VirtualizedContainerService.HintSize="816,11422.4" sap2010:WorkflowViewState.IdRef="If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="814.4,5220" sap2010:WorkflowViewState.IdRef="Sequence_604">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fetch'" sap:VirtualizedContainerService.HintSize="780.8,189.6" sap2010:WorkflowViewState.IdRef="NClick_300" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="200" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1182153/deliverables" CvTextArea="664, 902, 52, 18" CvTextArgument="FETCH" CvType="Text" DesignTimeRectangle="565, 887, 217, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='test-fetch-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='test-fetch-button' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium OWLo5 css-1n2elh3' aaname=' Fetch' check:innerText='FETCH' /&gt;" Guid="a7e9e56a-5662-4238-b878-2ea1f7bb0c09" InformativeScreenshot="85574b0bfa4c3158d811690dc92b0a1b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="780.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_357" Message="[&quot;TC_21 : Verify that  performing a Fetch/Refetch upload : Pass&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="780.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_359" Message="[&quot;TC_27 : Verify that Fetch button is displayed : Pass&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="780.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_349" Message="[&quot;Tax Software is: &quot; + in_str_TaxSoftware]" />
+                  <If Condition="[in_str_TaxSoftware = &quot;UltraTax CS&quot;]" DisplayName="If - Ultra tax only" sap:VirtualizedContainerService.HintSize="752,512.8" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,237.6" sap2010:WorkflowViewState.IdRef="Sequence_592">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckState DisplayName="Check App State 'Unrecognized UltraTax'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_58" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="30" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,1404.8" sap2010:WorkflowViewState.IdRef="Sequence_589">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unrecognized UltraTax'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_301" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1206488/deliverables" CVScreenId="007b6232-a9c5-4c37-8aa3-1a3d2ef388c2" CvElementArea="1820, 934, 32, 31" CvType="CloseButton" DesignTimeRectangle="1824, 937, 25, 25" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg' parentid='app-container' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='app-container' tag='svg' class='MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4' aaname='' /&gt;" Guid="f73916ba-7299-4cd5-9f0e-cae6c6953925" InformativeScreenshot="8e56bb1c19cab6a3ca9bf0fb2eb3c8df.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="007b6232-a9c5-4c37-8aa3-1a3d2ef388c2" CvTextArea="1117, 935, 672, 22" CvTextArgument="Unrecognized UltraTax client. Check that the client's tax ID is correct and try again." CvType="Text" DesignTimeRectangle="1120, 932, 669, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' isleaf='1' parentid='app-container' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='app-container' tag='SPAN' class='' aaname='Unrecognized UltraTax client. Check that the client’s tax ID is correct and try again.' check:innerText='Unrecognized UltraTax client. Check that the client’s tax ID is correct and try again.' /&gt;" Guid="7d59635d-686c-4f44-a010-eb3467a800bb" SearchSteps="Selector, FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dashboard'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_302" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1206488/deliverables" CVScreenId="a0164574-7fde-4c0c-8840-4f00cf780ae0" CvTextArea="1692, 137, 133, 17" CvTextArgument="DASHBOARD" CvType="Text" DesignTimeRectangle="1674, 125, 186, 44" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Dashboard' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Dashboard' tag='BUTTON' type='button' class='MuiButtonBase-root ReO6Q s1FHU css-1b47e06' check:innerText='DASHBOARD' /&gt;" Guid="c2067611-d0ae-41a4-9dea-a26126c58f52" InformativeScreenshot="5eea5bd597bbd58b626e2e0aa9a0ba40.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FileRoom'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_303" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1206488/deliverables" CVScreenId="5af8c504-acf3-4be8-ac21-b1aaa958628c" CvTextArea="1694, 237, 86, 18" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1674, 225, 188, 45" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="&lt;webctrl aria-role='menuitem' tabindex='-1' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' tabindex='-1' tag='LI' type='' class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1owpkyx' aaname='FileRoom' check:innerText='FileRoom' /&gt;" Guid="2dcaa177-9dc4-418a-af1e-2def4c83366e" InformativeScreenshot="47760fa41b17a52b21acf644d15315cf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'push button  Leave'" sap:VirtualizedContainerService.HintSize="387.2,139.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="792a7da7-df2a-4c01-9295-e64fc2307eaf" InformativeScreenshot="88b2ec4648b6f56b06139e4b408f1191" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Leave site?' /&gt;&lt;ctrl name='Leave site?' role='dialog' /&gt;&lt;ctrl name='Leave' role='push button' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_2" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_21&quot;,&quot;TC_27&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <s:SanityReport_TCFiltering.in_strComments>
+                                  <InArgument x:TypeArguments="x:Object" />
+                                </s:SanityReport_TCFiltering.in_strComments>
+                              </s:SanityReport_TCFiltering>
+                              <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_2" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </o:OCS_GenerateReportOutput>
+                              <Throw Exception="[new BusinessRuleException(&quot;UltraTaxClient ID Erro&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,115.2" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1206488/deliverables" CVScreenId="c1e69dc7-99a8-44fe-b40e-ed90278b7a48" CvTextArea="1117, 935, 672, 22" CvTextArgument="Unrecognized UltraTax client. Check that the client's tax ID is correct and try again." CvType="Text" DesignTimeRectangle="1120, 932, 669, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' isleaf='1' parentid='app-container' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='app-container' tag='SPAN' class='' aaname='Unrecognized UltraTax client. Check that the client’s tax ID is correct and try again.' check:innerText='Unrecognized UltraTax client. Check that the client’s tax ID is correct and try again.' /&gt;" Guid="ed2a92ab-2b5b-42fe-bc9c-5c1041796f3f" InformativeScreenshot="0fd59832a0edc010a2a99956e887645c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                        <ui:CommentOut sap2010:Annotation.AnnotationText="Bhushan sequence for Ultra tax" DisplayName="Comment Out - Bhushan - Sequence" sap:VirtualizedContainerService.HintSize="353.6,92" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,420.8" sap2010:WorkflowViewState.IdRef="Sequence_618">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayBefore="3" DisplayName="Click '​'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_304" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1203471/deliverables" DesignTimeRectangle="625, 566, 688, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='DIV' type='' class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-182didf' aaname='' check:innerText='​' /&gt;" Guid="e43b5224-0a9c-4c50-afa7-3943c643aafd" ImageBase64="" InformativeScreenshot="4f9ab1677c5f8bc81ebc7a9bd31d915d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="911, 505, 25, 25" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p&amp;gt;a&amp;gt;svg&amp;gt;path' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='path' class='' aaname='' /&gt;" Guid="f48cf698-32fe-4558-891d-743206843ca7" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click '265154'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_305" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1203471/deliverables" DesignTimeRectangle="625, 626, 688, 45" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='option' innertext='{0}' /&gt;&quot;, in_str_UltraTaxSoftwareAccountNumber)]" FuzzySelectorArgument="&lt;webctrl aria-role='option' innertext='265154' tag='LI' type='' class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1owpkyx' aaname='265154' check:text='265154' /&gt;" Guid="04c149c6-7518-422b-9aa5-8cc3483d1381" ImageBase64="" InformativeScreenshot="1918a3debdf11f633a674c4899ded893.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_350" Message="[&quot;Account Number is &quot; +in_str_UltraTaxSoftwareAccountNumber]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:LogMessage>
+                              <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="RetryScope_4">
+                                <ui:RetryScope.ActivityBody>
+                                  <ActivityAction>
+                                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,136.8" sap2010:WorkflowViewState.IdRef="Sequence_591">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NSelectItem DisplayName="Select Item '&lt;default&gt;'" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="NSelectItem_63" Item="[in_str_UltraTaxSoftwareAliasforDataLocation]" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                                        <uix:NSelectItem.Items>
+                                          <scg:List x:TypeArguments="x:String" Capacity="3">
+                                            <x:String>&lt;default&gt;</x:String>
+                                            <x:String>Production</x:String>
+                                            <x:String>testrfa</x:String>
+                                          </scg:List>
+                                        </uix:NSelectItem.Items>
+                                        <uix:NSelectItem.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1201813/deliverables" CvTextArea="641, 699, 90, 17" CvTextArgument="&lt;default&gt;" CvType="Text" DesignTimeRectangle="625, 683, 688, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-labelledby='alias-select' aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='alias-select' aria-role='button' tag='DIV' type='' class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-182didf' aaname='&amp;lt;default&amp;gt;' check:innerText='&amp;lt;default&amp;gt;' /&gt;" Guid="4e763216-873f-4b30-9405-0388dff0c225" ImageBase64="" InformativeScreenshot="c3195f63116add044c6fe7e06c6b230f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target CvTextArea="641, 614, 70, 18" CvTextArgument="265154" CvType="Text" DesignTimeRectangle="625, 598, 688, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='DIV' type='' class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-182didf' aaname='265154' check:innerText='265154' /&gt;" Guid="7ff26979-f481-45b3-89b7-fe9bb9a92505" SearchSteps="FuzzySelector, CV" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NSelectItem.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NSelectItem>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:RetryScope.ActivityBody>
+                                <ui:RetryScope.Condition>
+                                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                                </ui:RetryScope.Condition>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:RetryScope>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_351" Message="[&quot;Alias is &quot; +in_str_UltraTaxSoftwareAliasforDataLocation]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:LogMessage>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'CONFIRM'" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="NClick_306" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="5" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1203464/deliverables" CvElementArea="1185, 777, 141, 55" CvTextArea="1215, 796, 81, 17" CvTextArgument="CONFIRM" CvType="Button" DesignTimeRectangle="1187, 779, 138, 51" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='CONFIRM' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='CONFIRM' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1hz6d6w' check:innerText='CONFIRM' /&gt;" Guid="8d4bb24f-15d2-47d7-a20f-ded0c0265f26" InformativeScreenshot="cc5afd3f8e81f34baed449c9ee1f0f1a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_593">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NCheckState DisplayName="Check App State 'CONTINUE'- Replace deliverables" sap:VirtualizedContainerService.HintSize="752,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_59" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,448.8" sap2010:WorkflowViewState.IdRef="Sequence_594">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CONTINUE'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_307" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1203471/deliverables" DesignTimeRectangle="915, 795, 107, 38" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='CONTINUE' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='CONTINUE' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall css-cj4z5u' check:innerText='CONTINUE' /&gt;" Guid="8407126f-ce81-41c0-9496-9603b2bb350b" InformativeScreenshot="58003b5d8822660837ddc911720e99d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="619, 607, 181, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Replace Deliverables' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Replace Deliverables' tag='SPAN' type='' class='' check:innerText='Replace Deliverables' /&gt;" Guid="d4fd1e26-0264-4ad2-9366-681594883427" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_352" Message="[&quot;Replace Deliverables&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1203471/deliverables" DesignTimeRectangle="915, 795, 107, 38" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='CONTINUE' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='CONTINUE' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall css-cj4z5u' check:innerText='CONTINUE' /&gt;" Guid="bcf138ea-4715-480f-8fc6-2a8d72245ade" InformativeScreenshot="63878fb29e6ac737978f2be935639088.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="619, 607, 181, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Replace Deliverables' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Replace Deliverables' tag='SPAN' type='' class='' check:innerText='Replace Deliverables' /&gt;" Guid="88a5abc4-b2e2-4a71-97c0-76ca52ad7e93" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DelayBefore="10" DisplayName="Check App State 'PROCESSING...'" sap:VirtualizedContainerService.HintSize="752,1786.4" sap2010:WorkflowViewState.IdRef="NCheckState_60" Mode="WaitDisappear" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="350" Version="V3">
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="449.6,1536" sap2010:WorkflowViewState.IdRef="Sequence_597">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DASHBOARD'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_308" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CVScreenId="3f510dad-a1cb-4311-b31c-531f8c44d459" CvElementArea="1672, 123, 189, 48" CvTextArea="1692, 137, 132, 17" CvTextArgument="DASHBOARD" CvType="Button" DesignTimeRectangle="1673, 123, 188, 48" DesignTimeScaleFactor="1.25" ElementType="Button" Guid="cb895fe1-b125-4bfc-9df5-3018286c3426" InformativeScreenshot="58b9f5ced1eae230ed5bdc2c234d2e17.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="3f510dad-a1cb-4311-b31c-531f8c44d459" CvElementArea="1503, 123, 154, 47" CvTextArea="1524, 139, 112, 17" CvTextArgument="HELP CENTER" CvType="Button" DesignTimeRectangle="1503, 124, 155, 48" ElementType="Button" Guid="423e3279-1095-4692-82cf-295543ba9756" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FileRoom'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_309" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CVScreenId="3f510dad-a1cb-4311-b31c-531f8c44d459" CvTextArea="1694, 237, 86, 18" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1674, 225, 188, 45" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="&lt;webctrl tabindex='-1' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl tabindex='-1' tag='LI' type='' class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1owpkyx' aaname='FileRoom' check:innerText='FileRoom' /&gt;" Guid="e8ef28bd-4c39-4f40-a8ab-ad357c14ef2d" InformativeScreenshot="cad3d48ede23732536dd02fdffdec315.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="3" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="387.2,186.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_76" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                        <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_3" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_21&quot;,&quot;TC_27&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <s:SanityReport_TCFiltering.in_strComments>
+                            <InArgument x:TypeArguments="x:Object" />
+                          </s:SanityReport_TCFiltering.in_strComments>
+                        </s:SanityReport_TCFiltering>
+                        <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,330.4" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_3" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </o:OCS_GenerateReportOutput>
+                        <Throw Exception="[new BusinessRuleException(&quot;Client is still in Processing&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,115.2" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1124077/deliverables" CVScreenId="d6f3d755-d833-4141-a372-1398969f5f04" CvTextArea="461, 425, 79, 10" CvTextArgument="PROCESSING..." CvType="Text" DesignTimeRectangle="214, 526, 97, 17" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='uXWSc' type='' parentid='test-deliverables-toggles' tag='SPAN' aaname='PROCESSING...' check:innerText='PROCESSING...' /&gt;" Guid="c68a09fc-3551-468b-9e47-bbc61db929a7" InformativeScreenshot="1460d92ff39d29a9afa7e599d8001b71.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="d6f3d755-d833-4141-a372-1398969f5f04" CvTextArea="500, 388, 104, 16" CvTextArgument="Tax Payment(s)" CvType="Text" DesignTimeRectangle="261, 480, 130, 21" ElementType="Text" Guid="5f514dc8-f166-47bd-86b1-532edabafd56" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DisplayName="Check App State 'Something went'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="752,1135.2" sap2010:WorkflowViewState.IdRef="NCheckState_62" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="10" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,884.8" sap2010:WorkflowViewState.IdRef="Sequence_600">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DASHBOARD'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_312" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CVScreenId="3f510dad-a1cb-4311-b31c-531f8c44d459" CvElementArea="1672, 123, 189, 48" CvTextArea="1692, 137, 132, 17" CvTextArgument="DASHBOARD" CvType="Button" DesignTimeRectangle="1672, 123, 188, 47" DesignTimeScaleFactor="1.25" ElementType="Button" Guid="cb895fe1-b125-4bfc-9df5-3018286c3426" InformativeScreenshot="363462028424cc9401e7a8cf7e7976e5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="3f510dad-a1cb-4311-b31c-531f8c44d459" CvElementArea="1503, 123, 154, 47" CvTextArea="1524, 139, 112, 17" CvTextArgument="HELP CENTER" CvType="Button" DesignTimeRectangle="1504, 123, 153, 47" ElementType="Button" Guid="f95e689f-14b8-4758-b9e6-2850e8e11b7d" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FileRoom'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_313" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CVScreenId="3f510dad-a1cb-4311-b31c-531f8c44d459" CvTextArea="1694, 237, 86, 18" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1674, 225, 188, 45" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="&lt;webctrl tabindex='-1' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl tabindex='-1' tag='LI' type='' class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1owpkyx' aaname='FileRoom' check:innerText='FileRoom' /&gt;" Guid="e8ef28bd-4c39-4f40-a8ab-ad357c14ef2d" InformativeScreenshot="cad3d48ede23732536dd02fdffdec315.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="3" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="387.2,186.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_78" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                        <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_4" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_21&quot;,&quot;TC_27&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <s:SanityReport_TCFiltering.in_strComments>
+                            <InArgument x:TypeArguments="x:Object" />
+                          </s:SanityReport_TCFiltering.in_strComments>
+                        </s:SanityReport_TCFiltering>
+                        <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_4" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </o:OCS_GenerateReportOutput>
+                        <Throw Exception="[new BusinessRuleException(&quot;Contact Sureprep Support&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,115.2" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_601">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1204436/deliverables" CVScreenId="5136a1b5-0daf-4960-9562-95df83c14c15" CvTextArea="1320, 847, 470, 21" CvTextArgument="Something went wrong. Please contact the support team." CvType="Text" DesignTimeRectangle="1322, 843, 467, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' isleaf='1' parentid='app-container' tag='SPAN' innertext='Something went wrong. Please contact the support team. ' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='app-container' tag='SPAN' innertext='Something went wrong. Please contact the support team. ' class='' aaname='Something went wrong. Please contact the support team. ' check:text='Something went wrong. Please contact the support team.' /&gt;" Guid="a9469cfb-e198-49ed-9e64-babf2c178832" InformativeScreenshot="e723eb322b3df8aba8ab0425d20bb03f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="e099b2d5-a8a6-445e-834c-5de366c1176c" CvElementArea="1269, 841, 34, 34" CvTextArea="1282, 849, 7, 17" CvType="Icon" DesignTimeRectangle="1275, 845, 25, 25" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg&amp;gt;path' parentid='app-container' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='app-container' tag='path' class='' aaname='' /&gt;" Guid="ee280625-129c-4f42-b2b5-f9392a5b2a86" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIhSURBVEhL7ZZZS+NQFMf9hirug4ho644Pgo6Kgg+CD1pUfBTXJxHHQUTcN/Qb6EtrWm0r1RZrF9vR2sYzOZ2Ti7dJepOo8+Qf/nDJWX5tcpNzS9wVpfC//Q3Vuqoc/IM/ITTlgsjSQt6hSVf+GsZ0awwshPq62iBxeAByKgVGkp+eIL6/B772Ft0ehTaEeuqqILa1qXSUqbUJ5XIQXV8Dd02Fbk/VulBvqwMyAT91sq7nKw9IjkZNX9Ua6HV3p3K7klRuX9loNP/jC/ujOajU1KAkP1DZx5UJBuCqvpYDojlo8vyM0o0lp1Pw5/Iib1yLFNve4oBoBr3u7qC04kKYWoNrkd6yWZCa+efLoInjI0orLqtQVPT3L1aD/gdVtricTlNKcVm9vajX+zstNDgyTOGvEz4+Dno3M00hsez8U9Tt2CgPjSwvUEgshKnFuDar8PxsAXRxnkJi2YVGFud4aGhygkJi2YWGXOM81N/fSyGx7EJv+np4KDqXNPe9tQPNxR5ZDZpB43s7lFJcdqA4ItUaNIP6OltNzU7LUKWnt6WZ1aAZFJ04PaFMY1l9T+O7OxwQzUGlxnp4DYcp/ePK3AbFow2NZ6JPG+LOJq63ag0U7W1zQsZ/Q+XW9SJJmnH23rpQtOdHNTxubpjaXKpwdj6srtg7mL03TofE8aGyaYxHH77j+MoZnYkKLYQyKwfqwNCA9rCtfM3clWX6Nbouhb/ojtnoqDSNUAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="752,122.4" sap2010:WorkflowViewState.IdRef="Delay_60" />
+                  <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="752,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_7" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_21&quot;,&quot;TC_27&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <s:SanityReport_TCFiltering.in_strComments>
+                      <InArgument x:TypeArguments="x:Object" />
+                    </s:SanityReport_TCFiltering.in_strComments>
+                  </s:SanityReport_TCFiltering>
+                  <uix:NCheckState DisplayName="Check App State 'Split Deliverables'" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="752,399.2" sap2010:WorkflowViewState.IdRef="NCheckState_63" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_602">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Split Deliverables'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_329" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1182153/deliverables" CvElementArea="1246, 914, 26, 26" CvType="CheckBox" DesignTimeRectangle="1239, 906, 43, 43" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' class='PrivateSwitchBase-input css-1m9pwf3' aaname='' /&gt;" Guid="58b0e8c7-b207-4b1b-a51d-6e3ec3bdd039" InformativeScreenshot="9c087641db911900bbeb7f2ee4a347b0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArea="1279, 917, 162, 23" CvTextArgument="Split Deliverables" CvType="Text" DesignTimeRectangle="1281, 912, 160, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Split Deliverables' parentid='pane2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Split Deliverables' parentid='pane2' tag='SPAN' type='' class='MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-f1g2sj' check:innerText='Split Deliverables' /&gt;" Guid="0b2a66cc-2d3f-4c63-bb2b-2901cdc7ef65" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1182153/deliverables" CvElementArea="1246, 914, 28, 27" CvType="CheckBox" DesignTimeRectangle="1239, 906, 43, 43" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' parentclass='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary css-2yn3lw' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' parentclass='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary css-2yn3lw' class='PrivateSwitchBase-input css-1m9pwf3' aaname='' /&gt;" Guid="263f2979-0bb2-44fb-af11-422bd4395b9e" InformativeScreenshot="18ebd114f3768ac3f8e5b9c9c9a372cd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="1279, 917, 162, 23" CvTextArgument="Split Deliverables" CvType="Text" DesignTimeRectangle="1281, 912, 160, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Split Deliverables' parentid='pane2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Split Deliverables' parentid='pane2' tag='SPAN' type='' class='MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-f1g2sj' check:innerText='Split Deliverables' /&gt;" Guid="01fa3515-0a81-4018-9d7b-a69855f037e9" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="814.4,6096" sap2010:WorkflowViewState.IdRef="Sequence_611">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Drag and'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_315" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1182153/deliverables" DesignTimeRectangle="1366, 399, 405, 31" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='jdyKw' parentid='pane2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='jdyKw' parentid='pane2' tag='SPAN' type='' aaname='Drag and drop or click to browse documents' check:innerText='Drag and drop or click to browse documents' /&gt;" Guid="2d951c4e-fd73-44f3-a061-5f32afc52c30" ImageBase64="" InformativeScreenshot="b6e7bf6a415dc68f2ee82f30953b26b8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'File &amp;name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="752,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Text="[in_str_AddDoc]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="201, 410, 237, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="910c589b-ce0f-4cef-8d7b-359e74f201f8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPEAAAATCAYAAABBR+uAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVHhe7dMBDQAADMOg+ze962gCHrgBaRJDnMQQJzHESQxxEkOcxBAnMcRJDHESQ5zEECcxxEkMcRJDnMQQJzHESQxxEkOcxJC2PbJASJ4qgGHOAAAAAElFTkSuQmCC" InformativeScreenshot="a284d86c7f6dd10103911b519fde014b.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="138, 409, 54, 15" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' check:text='File &amp;amp;name:' /&gt;" Guid="0b2ce04f-5c28-4ce3-a234-48da4fe2e515" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAATCAYAAADBGB7WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEASURBVFhH7VPRFcMgCHQq52EbhnEXZ3EDKokmaIkmTT8a68e9hwaOuwgmhED/gGl0NEyjo0EYdQTGkBGw6Cl4JGssoc85OX4WKqM9E9Poz+OEUXlf5SxjnUcdyBV1jJSPUK5D+u5gXxMDrqxxOze4QB6tyqFqcLGfRfI5J6K5o9zg2KiMIyJ5IUByZhMsoPVDNt5Yk4UuNcJcwXGggXPaRkWRei/i4k8mbK+i1SrnZGKF0qPHcUrDiptGtdeR6InM9Z7QKj0ucbRxY0c5rvblDTWnOMvxWgRrPXpnjhUNXx1d/laPzqXR5VdMdRYIPnlRPmsa2kbHxjQ6GqbRsRDoBaFqBwMxkChkAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_316" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="696, 543, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='unchecked' /&gt;" Guid="0a51d235-b1fa-409b-bd2e-d94632a566fd" InformativeScreenshot="5c0696f545f4ec154fb965915743a74a.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Split Deliverables'" sap:VirtualizedContainerService.HintSize="752,408" sap2010:WorkflowViewState.IdRef="NCheckState_64" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NCheckState.IfNotExists>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Split Deliverables'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_330" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1182153/deliverables" CvElementArea="1246, 914, 26, 26" CvType="CheckBox" DesignTimeRectangle="1239, 906, 43, 43" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' class='PrivateSwitchBase-input css-1m9pwf3' aaname='' /&gt;" Guid="58b0e8c7-b207-4b1b-a51d-6e3ec3bdd039" InformativeScreenshot="9c087641db911900bbeb7f2ee4a347b0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArea="1279, 917, 162, 23" CvTextArgument="Split Deliverables" CvType="Text" DesignTimeRectangle="1281, 912, 160, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Split Deliverables' parentid='pane2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Split Deliverables' parentid='pane2' tag='SPAN' type='' class='MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-f1g2sj' check:innerText='Split Deliverables' /&gt;" Guid="6100e551-ba70-4a45-921a-e84d8074a2a3" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable Accuracy="1" BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2024/0/1539904/deliverables" CVScreenId="e9d90cf0-f225-4f38-ac2d-47bc704bb15f" DesignTimeRectangle="1055, 859, 57, 56" DesignTimeScaleFactor="1.25" ElementType="CheckBox" Guid="00ae3604-6210-4952-b4dd-f3c5365e3228" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAA4CAYAAABHRFAgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHpSURBVGhD7djPSgJBHAfwLQq69hjde4CwguoRhESIoJfoWoZSl7p1sg4dOgX9ValeIDqZEHSKEKKUalt1lV9+bVdU1nT9jTmM84XvZZRxPszOqmvQEEQjVYlGqhKNVCUaqUo0UpVopCrRSFWikapEKDJnFuk2k6XrNK+YA3OJijDk9nmaxsIHZCzHhXQ8fEh7yYwzOy9CkM/vpudCuR0Jxen1o+B8Su8RgsTl5bVIEcXc3AhB4hx5LVBEMTc3UiGXYimajVw1jSmFXIgmqWhXqGCXaWbjsj7ORVpnK3IgXSBSKldofitRf42HfKLYtDF45F9AlIc8paAxYGQnICrtTs5FErWbSONYaxejqSYgwF7v4yGrv8JOguKR2A3cPABot/BudtAtF4n0BYmFI15QP0BUSiTaCg1s/n73+QWi0iJRnEkXapXKtH583wTsdGbdSo1EG3fUTbc76FZ6JNoI9QtEWUjbIssShLx5aI9EATOLtm8girl7zmOMpoyJ/u+k28m1I8/xTmXt5Ocd7a8G/g/Za1lIJ0KQQ/Gn+SX37blAbvH4I5uv3jmYEYJEdi7SNBoS+yBrNyHRgyw3b1+F2t0Q54hTXKJ5s+TMyo9QpKzRSFWikapEI1WJRqoSjVQlGqlKNFKNEP0A2PYrIzb58ucAAAAASUVORK5CYII=" InformativeScreenshot="130985c1decee60031304493f00239a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Image" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="e9d90cf0-f225-4f38-ac2d-47bc704bb15f" CvTextArea="1107, 877, 163, 23" CvTextArgument="Split Deliverables" CvType="Text" DesignTimeRectangle="1110, 872, 160, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Split Deliverables' parentid='pane2' tag='SPAN' type='' class='MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-f1g2sj' check:innerText='Split Deliverables' /&gt;" Guid="5f95425a-b3fa-42e4-9760-6227e3c174cf" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message - Split Deliverables is checked" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_358" Message="[&quot;TC_22 : Verify that checkmark is checked : Pass&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:LogMessage DisplayName="Log Message - Split Deliverables is checked" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_360" Message="[&quot;TC_28 : Verify that Fetch button will be hidden : Pass&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="752,246.4" sap2010:WorkflowViewState.IdRef="NMouseScroll_155" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
+                    <uix:NMouseScroll.SearchedElement>
+                      <uix:SearchedElement>
+                        <uix:SearchedElement.Target>
+                          <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2022/0/945544/deliverables" CvElementArea="1245, 956, 643, 47" CvTextArea="1469, 969, 195, 17" CvTextArgument="UPLOAD DELIVERABLES" CvType="Button" DesignTimeRectangle="1247, 955, 642, 46" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='UPLOAD DELIVERABLES' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='UPLOAD DELIVERABLES' parentid='app-container' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium TuN1a css-1n2elh3' check:innerText='UPLOAD DELIVERABLES' /&gt;" Guid="d6d6c981-ee19-45c9-8229-3f6e4b9acafe" ImageBase64="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" InformativeScreenshot="e8e3bc40fb756e327f86faaff77bf3b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, Image" Version="V2" Visibility="Interactive" />
+                        </uix:SearchedElement.Target>
+                        <uix:SearchedElement.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:SearchedElement.Timeout>
+                      </uix:SearchedElement>
+                    </uix:NMouseScroll.SearchedElement>
+                  </uix:NMouseScroll>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'UPLOAD DELIVERABLES'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_318" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2022/0/946761/deliverables" DesignTimeRectangle="1066, 920, 823, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='UPLOAD DELIVERABLES' tag='BUTTON' type='button' /&gt;" Guid="dcf996c0-cb4b-4f6c-b3fa-6ef951cbd167" InformativeScreenshot="531d9144b469e57362b8ba65f76d5e21.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Visible" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Replace Deliverables'" sap:VirtualizedContainerService.HintSize="752,408" sap2010:WorkflowViewState.IdRef="NCheckState_67" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V4">
+                    <uix:NCheckState.IfExists>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'CONTINUE'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_331" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V4">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1248919/deliverables" CVScreenId="f0c94a7d-c511-45af-aa31-c914a00aa6d8" DesignTimeRectangle="1757, 843, 107, 39" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='CONTINUE' tag='BUTTON' type='button' /&gt;" Guid="5b358b60-e7bf-4fa3-937f-3b9addb6d44b" InformativeScreenshot="3b0caeb67a23acd3bae1a457f47c92c6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1248919/deliverables" CVScreenId="f0c94a7d-c511-45af-aa31-c914a00aa6d8" CvTextArea="1460, 657, 182, 22" CvTextArgument="Replace Deliverables" CvType="Text" DesignTimeRectangle="1461, 655, 181, 24" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Replace Deliverables' tag='SPAN' /&gt;" Guid="93e8e124-2a11-413a-8a57-60df8da00596" InformativeScreenshot="e00f1b2eb1e665a7e5f7a0aee62e8501.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DisplayName="Check App State 'Confirm Client Informat…'" sap:VirtualizedContainerService.HintSize="752,902.4" sap2010:WorkflowViewState.IdRef="NCheckState_68" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Timeout="10" Version="V4">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,652" sap2010:WorkflowViewState.IdRef="Sequence_619">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Resident State'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_324" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2024/0/1562256/deliverables" CVScreenId="9575b9cf-c873-4488-9e2d-67b1b2019eaf" DesignTimeRectangle="1177, 606, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='svg' class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-1636szt' /&gt;" Guid="0a5956f1-b088-4d5c-b38e-5d055424539b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB7SURBVFhH7dK7CcAwDIThLO3lPIZr7aJwXXKEoIeLBO4HdTZ82Dr8IwnCCcIJwgnCCcIJwv0PYmY+50wN7kRLvchay8cYocHZTOmviWCyCFTakTdMBYHKy/qEqSJQGYKumA4CtSAIgC4CtSG7EoQThBOEE4QThBPknvsJ7La9khh6CpgAAAAASUVORK5CYII=" InformativeScreenshot="b0bc0a80e3e60eed2d15b0929011ea99.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, Image" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="9575b9cf-c873-4488-9e2d-67b1b2019eaf" DesignTimeRectangle="740, 575, 104, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl id='modal-resident-state' tag='LABEL' aaname='Resident State' /&gt;" Guid="424e8f88-0e48-475e-b3dc-7666b6303f52" SearchSteps="Selector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Resident State'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_325" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2024/0/1562256/deliverables" CVScreenId="4b382b4d-f884-452b-a9fc-bb087616b952" DesignTimeRectangle="723, 495, 473, 45" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='option' tag='LI' aaname='*{0}' /&gt;&quot;, in_str_ResidentState)]" Guid="b3dd97f1-aa6a-4066-9b08-0eea97358f7d" InformativeScreenshot="f1995e1b3d1ea067353c5c3886dab051.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="387.2,182.4" sap2010:WorkflowViewState.IdRef="NClick_326" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2024/0/1562256/deliverables" CVScreenId="fb0e489b-a1bd-4ef6-9ccc-35d79c6d1698" CvElementArea="1100, 709, 129, 54" CvTextArea="1142, 727, 43, 16" CvTextArgument="SAVE" CvType="Button" DesignTimeRectangle="1103, 711, 125, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Save' tag='BUTTON' type='button' /&gt;" Guid="af37e289-18e5-4999-828f-dc28d646a09f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAA2CAYAAADgb/qdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAM/SURBVHhe7Z0/a9tAGIf9VQT5AoEMWWvwUsgHiKFD8FRCh2AymSzFo+gQTIdiMgSUIeAOBWcoyEuIMxSUoWAPAXvUELCGDBoy/Pre6WT98XmuFP8OniF3r+Thfe7uvTM4jdVqBbLbUAKSSfDw8IDDw0M0Gg3yzlF5VvnekIAC7BYq3xsS2ALJ+4YSEEpAKAERKAGhBIQSEIESEEpAKAERKAGhBIQSEIESEEpAKAERKAGpuwT7OL0OEEbI2luMaDnF6LxpiXcwnKugBbxWccy5mkl/jOnXYn+e3n2cPXvmI/+xhRb56Fqeryo1lsBBd5KkIfo7hnftaUaTAIuXyJ7MlicpTFp41ymO7Q0QvMnAk1vsX9PD9FXGnz001d9GgvAx+dwC37tJTE2osQRD6Ln7x4VjHd+kcxfKShHAVzN6Y7Y6GDzJC2V8sJfvN1xMZZ2QdeDGrDBGgtlVKa6G1F6CaNK1jNnoYCwO6JmuEypL/0Up5lsgAUBw6RT7hf6jUmCGYSoIJagCZnmOpugd2MZLpInX24R59mlQWkX6W/pds1Xk+ilBNWjKzNVVwVuE2WSI7ofNGZxglvpXEcb06XrCsvQnxV9uxgvOpWWFMBIsbttofypxtJ/F1YBaS6Bwjl2M51oF3eKlD/e4JIMp+uL7XtZ3MobaHdZ7fEp578/VCm4+zkhgbfNhFlcDai/BmoMO+j/luKgyKOnxzzMRmjfqTBBj8TtfxftYqNhwjHb+PY0ufJXd9BSQCvTYz8UI3A4qzJEUjCq5y5E5prWTgnBrCzE+Kb5DnyLMfcD6/qBcRFKCaqMvhNIj4LZlX2HuDQrbhCJ95vZj8q5cLbGGElSYPVPhm+VcF3rbzv6NJrxnW5LNcXIe6K3AegylBBVAkhC+LBBMRvB+9HH6pY/hrY+Zysy6JrAc7UpYK3+h/SvdQ+RdZ8VnNEYC3hj+T1ou/GWEWBeCpqnvDeY+Bp+ThCYJtuznBcydgVT0BVFao+SKWQrHTr4/xUhgbfzugNQNSkAoAaEERKAEhBIQSkAESkAoAaEERKAEhBIQSkAESkAoAaEERNiQgD91v1tYf+qe//Rid1B5tv7TC7K7UIKdZ4V/PvtKaPU06E4AAAAASUVORK5CYII=" InformativeScreenshot="6688c3596cb0730126eacb42b9d56f60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, Image, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="reviewerdashboard.sureprep.com/v2/dashboard/2024/0/1562256/deliverables" CVScreenId="6758d887-6864-4f96-9510-a5605bbf3cd0" CvTextArea="707, 429, 263, 20" CvTextArgument="Confirm Client Information" CvType="Text" DesignTimeRectangle="710, 424, 261, 32" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='P' aaname='Confirm Client Information' check:innerText='Confirm Client Information' /&gt;" Guid="2bf391dc-c39a-4e82-a053-1bb13ab28b82" InformativeScreenshot="7b23b1de782aefc9ba729ccb8a044d35.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_354" Level="Info" Message="[in_str_ResidentState+ &quot; is selected&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <uix:NCheckState DisplayName="Check App State 'Replace Deliverables'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="752,408" sap2010:WorkflowViewState.IdRef="NCheckState_65" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'CONTINUE'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_332" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1204311/deliverables" CVScreenId="7a60e645-9d62-434b-842e-d92e0322fa49" CvElementArea="1755, 862, 110, 43" CvTextArea="1767, 874, 85, 16" CvTextArgument="CONTINUE" CvType="Button" DesignTimeRectangle="1757, 863, 107, 38" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='CONTINUE' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='CONTINUE' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall css-cj4z5u' check:innerText='CONTINUE' /&gt;" Guid="289d6707-8c25-4d34-98e7-cf933e63d4c5" InformativeScreenshot="2e00a7645c33c91e8f1646f9bd8caeb7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_608">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1204311/deliverables" CVScreenId="7a60e645-9d62-434b-842e-d92e0322fa49" CvTextArea="1460, 677, 182, 23" CvTextArgument="Replace Deliverables" CvType="Text" DesignTimeRectangle="1461, 675, 181, 24" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Replace Deliverables' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Replace Deliverables' tag='SPAN' type='' class='' check:innerText='Replace Deliverables' /&gt;" Guid="6c2a3790-8b9b-4373-b5b3-5e62895f4b6d" InformativeScreenshot="303f42213e0e15db12ad0de5aaf94d38.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="752,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_27" Text="Clicked on Upload Deliverables" />
+                  <uix:NCheckState DisplayName="Check App State 'A7327JO3_SUREPREP_TAXPA…'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="752,1739.2" sap2010:WorkflowViewState.IdRef="NCheckState_66" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,1488.8" sap2010:WorkflowViewState.IdRef="Sequence_609">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dashboard'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_320" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CVScreenId="410c9ec1-40ae-4c38-a2c1-186d8042b1fd" CvTextArea="1691, 137, 135, 17" CvTextArgument="DASHBOARD" CvType="Text" DesignTimeRectangle="1674, 125, 186, 44" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Dashboard' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Dashboard' tag='BUTTON' type='button' class='MuiButtonBase-root ReO6Q s1FHU css-1b47e06' check:innerText='DASHBOARD' /&gt;" Guid="98e98b18-811b-41d3-ba5a-daa1735e5c27" InformativeScreenshot="b9a403752bbe871eed7a636bcb30a0c1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FileRoom'" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_321" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f5d6f50e-e415-433e-bd91-3e94cfd6bd8d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard" CVScreenId="faf28eeb-7920-482c-aa3e-4da74fd0249c" CvTextArea="1694, 237, 86, 18" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1674, 225, 188, 45" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="&lt;webctrl tabindex='-1' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl tabindex='-1' tag='LI' type='' class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1owpkyx' aaname='FileRoom' check:innerText='FileRoom' /&gt;" Guid="32fe8b38-727c-4940-b717-985362bf6bd7" InformativeScreenshot="cad3d48ede23732536dd02fdffdec315.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="3" DisplayName="Click 'push button  Leave'" sap:VirtualizedContainerService.HintSize="387.2,139.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e89dda4a-25a3-4994-bb31-a192aa647e01" InformativeScreenshot="0cd609a13d3af5e2f88550d953663df9" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Leave site?' /&gt;&lt;ctrl name='Leave site?' role='dialog' /&gt;&lt;ctrl name='Leave' role='push button' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_5" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_22&quot;,&quot;TC_28&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <s:SanityReport_TCFiltering.in_strComments>
+                            <InArgument x:TypeArguments="x:Object" />
+                          </s:SanityReport_TCFiltering.in_strComments>
+                        </s:SanityReport_TCFiltering>
+                        <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,330.4" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_5" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </o:OCS_GenerateReportOutput>
+                        <Throw Exception="[new BusinessRuleException(&quot;Document Failed to Open&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,115.2" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_610">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1182153/deliverables" CvTextArea="1201, 935, 589, 22" CvTextArgument="* failed to upload." CvType="Text" DesignTimeRectangle="1077, 932, 712, 25" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' parentid='app-container' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='app-container' tag='SPAN' class='' aaname=' failed to upload.' check:innerText='A7327JO3_SUREPREP_TAXPAYER1___SPOUSE1 _1_.pdf failed to upload.' /&gt;" Guid="755deba7-0e55-4033-ac70-a6dfa1d65c1f" InformativeScreenshot="06e19bfd47bb0a239e7b83663ebfbdac.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="1167, 935, 623, 22" CvTextArgument="i A7327JO3_SUREPREP_TAXPAYER1__SPOUSE1 _1.pdf failed to upload." CvType="Text" DesignTimeRectangle="1074, 933, 716, 23" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='5' parentid='app-container' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='MuiSnackbarContent-message W0So1 css-1dqtjm9' parentid='app-container' tag='DIV' aaname='' check:innerText='A7327JO3_SUREPREP_TAXPAYER1___SPOUSE1 _1_.pdf failed to upload.' /&gt;" Guid="91c1549d-ac6e-4057-8a43-5ca8a2c90c31" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="752,425.6" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_6" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_22&quot;,&quot;TC_28&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <s:SanityReport_TCFiltering.in_strComments>
+                      <InArgument x:TypeArguments="x:Object" />
+                    </s:SanityReport_TCFiltering.in_strComments>
+                  </s:SanityReport_TCFiltering>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="1d0609d39c5e9e050528d3d748593e0f.jpg" Selector="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" Title="Reviewer Dashboard" Url="https://reviewerdashboard.sureprep.com/v2/dashboard" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

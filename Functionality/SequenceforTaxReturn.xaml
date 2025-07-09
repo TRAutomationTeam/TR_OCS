@@ -1,0 +1,1150 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SequenceforTaxReturn" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="clr-namespace:OCS_GenerateReportOutput;assembly=OCS_GenerateReportOutput" xmlns:s="clr-namespace:SanityReport_TCFiltering;assembly=SanityReport_TCFiltering" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Functionality" Type="InArgument(x:String)" />
+    <x:Property Name="io_dt_DataofStates" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_str_TaxSofware" Type="InArgument(x:String)" />
+    <x:Property Name="io_dt_TestSummaryReport" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <this:SequenceforTaxReturn.io_dt_TestSummaryReport>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:SequenceforTaxReturn.io_dt_TestSummaryReport>
+  <this:SequenceforTaxReturn.in_TransactionItem>
+    <InArgument x:TypeArguments="ui:QueueItem" />
+  </this:SequenceforTaxReturn.in_TransactionItem>
+  <sap:VirtualizedContainerService.HintSize>1408.8,3288.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>SanityReport_TCFiltering</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>OCS_GenerateReportOutput</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>SanityReport_TCFiltering</AssemblyReference>
+      <AssemblyReference>OCS_GenerateReportOutput</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="704,3224" sap2010:WorkflowViewState.IdRef="Sequence_141">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: cchtaxabc LiveOCSTEST8 - TaxCaddy CPA" sap:VirtualizedContainerService.HintSize="641.6,3135.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,2895.2" sap2010:WorkflowViewState.IdRef="Sequence_143">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="TodayDate" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="2" DisplayName="Click 'Tax Returns'" sap:VirtualizedContainerService.HintSize="545.6,189.6" sap2010:WorkflowViewState.IdRef="NClick_55" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/993626/2022/tax-documents/requests" CvTextArgument="Tax Returns" CvType="Text" DesignTimeRectangle="823, 477, 206, 108" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Tax Returns' parentid='test-clientDetails' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Tax Returns' parentid='test-clientDetails' tag='A' type='' class='SZDqK' check:innerText='Tax Returns' /&gt;" Guid="5508c8fd-bcee-4845-afe7-c5bb1e83f1b2" ImageBase64="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" InformativeScreenshot="6d7486c526a5986835b4661fbf2d968c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target Accuracy="0.86" CvType="Icon" DesignTimeRectangle="851, 516, 24, 30" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;a&amp;gt;svg&amp;gt;path' idx='3' parentid='test-clientDetails' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' parentid='test-clientDetails' tag='path' aaname='' /&gt;" Guid="8674b560-cb41-4ecb-890e-550920b205c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAiCAYAAABMfblJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKfSURBVFhH7ZftS1NRHMfv/xIUvYjohRWVRA8QBT1Ar6oXvip6oIjKSDRipPRgDwYLSojSNB+33NSapWQMSzPTsS3EmpE6LJqI2tI9fru/487x3nV3W+sWQfvAl+3+ds7ve8/v3HPumYQE09/CGBj+ghn5808iXbb2Yd2ZBiw6cE8oV76+ZnuDcDSWaGYcEjcpvP+CBeiTx3YWN+PTZJDFjYIZ5pysha3HxwJN3T6slK+56TaTDXPhKBq63olYsm40D7C+6SBtKrIiMD2Ll4PjKLP3o901grHAVyw9XCkSXrf1IxSJqW4kWeVtnkRKfaSLjb3sy4rjD1jH5ceqmfmOYrtItqHQwtqYarpFjLT3igOLD1aIa3Ori7XTQ9p9oRXxOPDc48eWcw9VCZWiKlR3DqpiVEqn148lhxZMfzZSNof7rjpQ6xxCcC4C78gE9pvbVYlJtGQ6PWOqGE0BQTerHOnNR6lHKp5SEs1bQWUXe0i2n18oKYnm1d4zrIpxQyLdkUpHbj1Dh2tUlajv/WeU1L8S16vz61hjWpvKdkpDInmkWnMqbSyyYEKen9HADO489aKi4y0i0Tj2lD4WHUvlzYHYfNYqYqRkQ4LKrmfKSrrqVJ1Yh+6PAeSVPREdtpqaMBuKsjnmMS4tQ0KvvLo7za6S+Z3GNz6FZUerRJwrlSGRbMqRLlleY+3pelWi9QWNMLe4EI3FMeSf/GGv5aKyk2kqKaeFI94WU8GQ6m1BT+pth1tzZJmIIwxbej+wMlTJizv/rpPtOFodMxVHGGo1MlKcf8/wV9HKQeJkDQ0TJ2uY+DV9tHKQOFlDw8T5jwz1TtW/K34II4Qh/YvSamyE6LTHEYZ0+qYTVs6JGs1OmWiNfHQpb3MnHOYRhn8H4DuU4+UHIbTn+AAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_42" Message="[&quot;Clicked on Tax Return&quot;]" />
+            <If Condition="[in_Functionality = &quot;Fetch&quot; or in_Functionality = &quot;Drag and Drop&quot;]" sap:VirtualizedContainerService.HintSize="545.6,220" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_159">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+                    <ui:IfElseIf.ConditionBlocks>
+                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                        <ui:IfElseIfBlock BlockType="If" Condition="[in_str_TaxSofware.ToString = &quot;GoSystem Tax RS&quot;]" sap:VirtualizedContainerService.HintSize="334.4,24.799999999999997" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_7">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="416,316.8" sap2010:WorkflowViewState.IdRef="Sequence_151">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:Boolean" Name="FetchEnable" />
+                                <Variable x:TypeArguments="x:String" Name="aastate" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="353.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_11" />
+                              <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="353.6,105.6" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_9" Version="V3" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware.ToString = &quot;CCH Axcess Tax&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_8">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,316.8" sap2010:WorkflowViewState.IdRef="Sequence_157">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="353.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                              <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="353.6,105.6" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_8" Version="V3" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware = &quot;UltraTax CS&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_9">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,316.8" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="353.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                              <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="353.6,105.6" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_3" Version="V3" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                      </sc:BindingList>
+                    </ui:IfElseIf.ConditionBlocks>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:IfElseIf>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_160">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="687.2,3440" sap2010:WorkflowViewState.IdRef="IfElseIf_4">
+                    <ui:IfElseIf.ConditionBlocks>
+                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                        <ui:IfElseIfBlock BlockType="If" Condition="[in_str_TaxSofware.ToString = &quot;GoSystem Tax RS&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_10">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="636.8,1706.4" sap2010:WorkflowViewState.IdRef="Sequence_169">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="574.4,1617.6" sap2010:WorkflowViewState.IdRef="Sequence_168">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="FetchEnable" />
+                                  <Variable x:TypeArguments="x:String" Name="aastate" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="512,114.4" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_4" Version="V3" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FETCH'" sap:VirtualizedContainerService.HintSize="512,189.6" sap2010:WorkflowViewState.IdRef="NClick_67" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="497f9355-cb41-4bbd-99b6-09260750e67e" CvElementArea="1372, 485, 186, 39" CvType="Button" DesignTimeRectangle="1374, 487, 182, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='FETCH' parentid='test-clientDetails' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='FETCH' parentid='test-clientDetails' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorSecondary MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorSecondary css-9a8da6' check:innerText='FETCH' /&gt;" Guid="6c8d5bab-4d27-4c30-80c4-2cc04b1843c3" InformativeScreenshot="6d975d7de0801ea75819f6d81760cc53.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1031.2" sap2010:WorkflowViewState.IdRef="Sequence_189">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uie_output" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
+                                    <Variable x:TypeArguments="x:String" Name="str_output" />
+                                    <Variable x:TypeArguments="x:Int32" Name="i" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="449.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[i&lt;=52]" DisplayName="While" sap:VirtualizedContainerService.HintSize="449.6,283.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
+                                    <ui:InterruptibleWhile.Body>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,136.8" sap2010:WorkflowViewState.IdRef="Sequence_192">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If Condition="[i = 52]" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="If_5">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If.Then>
+                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_190">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_3" />
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,382" sap2010:WorkflowViewState.IdRef="Sequence_191">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'CheckBox'" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V4">
+                                                <uix:NCheck.Target>
+                                                  <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="3b0a2ab5-716f-4cc6-b124-6834189127ee" DesignTimeRectangle="684, 290, 42, 42" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' isleaf='0' parentclass='MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1q6kopr' idx='{0}' /&gt;&quot;, i)]" Guid="d5e263c7-96f0-444b-8c42-ac0c3275140d" ImageBase64="" InformativeScreenshot="4761115c345adb667f45a83f54bbff43.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                </uix:NCheck.Target>
+                                              </uix:NCheck>
+                                              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Int32">[i+1]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ui:InterruptibleWhile.Body>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InterruptibleWhile>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fetch'" sap:VirtualizedContainerService.HintSize="449.6,189.6" sap2010:WorkflowViewState.IdRef="NClick_68" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V4">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="42abf533-827a-4415-8c01-7c3d813b262b" DesignTimeRectangle="1180, 955, 68, 33" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Fetch' tag='BUTTON' /&gt;" Guid="53f3c927-e28b-40b4-ac2c-5b4b58effd42" InformativeScreenshot="4c52e077d735754ad71a6db8eb431b6f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                  <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="449.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_10" />
+                                  <uix:NCheckState DisplayName="Check App State 'Federal'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="449.6,201.6" sap2010:WorkflowViewState.IdRef="NCheckState_39" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Timeout="200" Version="V4">
+                                    <uix:NCheckState.IfExists>
+                                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_193">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </uix:NCheckState.IfExists>
+                                    <uix:NCheckState.IfNotExists>
+                                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_194">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </uix:NCheckState.IfNotExists>
+                                    <uix:NCheckState.Target>
+                                      <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="4a23b415-dec6-4c04-8d1b-431e3e8b3c6b" CvTextArea="1422, 558, 54, 14" CvTextArgument="Federal" CvType="Text" DesignTimeRectangle="1422, 557, 54, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Federal' parentid='test-clientDetails' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Federal' parentid='test-clientDetails' tag='SPAN' type='' class='t1POm' check:innerText='Federal' /&gt;" Guid="6fbcdf94-aa1f-4dbe-8686-6a6ecd58469a" InformativeScreenshot="1fd30c9aad4d35a5394cf6d0324590ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                                    </uix:NCheckState.Target>
+                                  </uix:NCheckState>
+                                </Sequence>
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_177">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2" MaxIterations="25">
+                                        <ui:InterruptibleWhile.Body>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1920" sap2010:WorkflowViewState.IdRef="Sequence_167">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="aastate" DisplayName="Get Attribute 'push button  FETCH'" sap:VirtualizedContainerService.HintSize="450,235" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                                              <ui:GetAttribute.Result>
+                                                <OutArgument x:TypeArguments="x:String">[aastate]</OutArgument>
+                                              </ui:GetAttribute.Result>
+                                              <ui:GetAttribute.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c11f68d6-0afe-48d2-a287-6f9a9ec9fa30" InformativeScreenshot="af6dc62fd598b5dd2e77f1321512a974" Selector="&lt;html app='chrome.exe' /&gt;&lt;webctrl aaname='FETCH' parentid='test-clientDetails' tag='BUTTON' /&gt;">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                  <ui:Target.WaitForReady>
+                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                  </ui:Target.WaitForReady>
+                                                </ui:Target>
+                                              </ui:GetAttribute.Target>
+                                            </ui:GetAttribute>
+                                            <If Condition="[aastate &lt;&gt; &quot;disabled&quot;]" sap:VirtualizedContainerService.HintSize="450,1597" sap2010:WorkflowViewState.IdRef="If_3">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,743" sap2010:WorkflowViewState.IdRef="Sequence_165">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fetch'" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NClick_61" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1326516/2023/tax-returns" CVScreenId="864109c5-2209-4ee6-ab0d-a8eb484f27ef" CvElementArea="1232, 932, 89, 46" CvTextArea="1252, 946, 46, 15" CvTextArgument="FETCH" CvType="Button" DesignTimeRectangle="1376, 607, 178, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Fetch' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fetch' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root jss15 MuiButton-contained MuiButton-containedPrimary' check:innerText='FETCH' /&gt;" Guid="356b50eb-2567-4929-ab79-39f367527437" ImageBase64="" InformativeScreenshot="5abb839f44ae80b90123eec65deee33a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                                        <uix:TargetAnchorable.Anchors>
+                                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                            <uix:Target CVScreenId="864109c5-2209-4ee6-ab0d-a8eb484f27ef" CvElementArea="1232, 932, 89, 46" CvTextArea="1252, 946, 46, 15" CvTextArgument="FETCH" CvType="Button" DesignTimeRectangle="1373, 605, 184, 50" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Fetch' class='MuiButton-label' tag='SPAN' type='' check:innerText='FETCH' /&gt;" Guid="23bb4a4d-b8d3-48f2-ba2e-06a3180cb22e" SearchSteps="FuzzySelector, CV" />
+                                                          </scg:List>
+                                                        </uix:TargetAnchorable.Anchors>
+                                                      </uix:TargetAnchorable>
+                                                    </uix:NClick.Target>
+                                                  </uix:NClick>
+                                                  <uix:NCheckState DisplayName="Check App State 'Fetching 2023'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="NCheckState_32" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Timeout="15" Version="V3">
+                                                    <uix:NCheckState.IfExists>
+                                                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_161">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </uix:NCheckState.IfExists>
+                                                    <uix:NCheckState.IfNotExists>
+                                                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_162">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </uix:NCheckState.IfNotExists>
+                                                    <uix:NCheckState.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1305118/2023/tax-returns" CvTextArea="1466, 564, 190, 17" CvTextArgument="Fetching 2023 Tax Summary" CvType="Text" DesignTimeRectangle="1467, 563, 189, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Fetching 2023 Tax Summary' parentid='test-clientDetails' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fetching 2023 Tax Summary' parentid='test-clientDetails' tag='SPAN' type='' class='_1Kw1M' check:innerText='Fetching 2023 Tax Summary' /&gt;" Guid="639ab975-264e-4a57-be6a-170d76d24594" InformativeScreenshot="da7086988301fdfb6298ac1d181a07ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                                    </uix:NCheckState.Target>
+                                                  </uix:NCheckState>
+                                                  <uix:NCheckState DisplayName="Check App State 'Fetching 2023'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="NCheckState_33" Mode="WaitDisappear" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Timeout="400" Version="V3">
+                                                    <uix:NCheckState.IfExists>
+                                                      <Sequence DisplayName="Target disappears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_163">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </uix:NCheckState.IfExists>
+                                                    <uix:NCheckState.IfNotExists>
+                                                      <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_164">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </uix:NCheckState.IfNotExists>
+                                                    <uix:NCheckState.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1305066/2023/tax-returns" DesignTimeRectangle="1364, 533, 395, 198" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='14' parentid='test-clientDetails' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='PF5lZ' parentid='test-clientDetails' tag='DIV' aaname='' check:innerText='Fetching 2023 Tax Summary&amp;#xD;&amp;#xA;This may take a few minutes to fetch.&amp;#xD;&amp;#xA;You may leave and return later.' /&gt;" Guid="0f28330a-9064-4497-91ad-95adb18ee45b" InformativeScreenshot="6ce3ae80cfa338dfd7681d0096ad15e1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                                    </uix:NCheckState.Target>
+                                                  </uix:NCheckState>
+                                                  <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,693" sap2010:WorkflowViewState.IdRef="Sequence_166">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add State to Tax Summary'" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NClick_62" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1326516/2023/tax-returns" CVScreenId="8af9bf76-a585-418b-a3d8-d553f66fa80a" CvElementArea="1293, 176, 33, 32" CvType="CloseButton" DesignTimeRectangle="1295, 178, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl class='MuiSvgIcon-root' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl class='MuiSvgIcon-root' type='' tag='svg' aaname='' /&gt;" Guid="7580e301-fa7d-4286-ae26-3b7992bd204d" ImageBase64="" InformativeScreenshot="bd1ff0c7372f6e71faeeb04489940c43.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                                        <uix:TargetAnchorable.Anchors>
+                                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                            <uix:Target CVScreenId="1c8e796d-8985-466d-843c-b3fad877850e" CvTextArea="622, 184, 273, 23" CvTextArgument="Add State to Tax Summary" CvType="Text" DesignTimeRectangle="625, 180, 268, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl id='test-addNewStateModal' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='test-addNewStateModal' tag='H2' type='' class='jss95' aaname='Add State to Tax Summary' check:innerText='Add State to Tax Summary' /&gt;" Guid="912a7fea-503c-40cb-b4fe-32c7c066c34d" SearchSteps="FuzzySelector, CV" />
+                                                          </scg:List>
+                                                        </uix:TargetAnchorable.Anchors>
+                                                      </uix:TargetAnchorable>
+                                                    </uix:NClick.Target>
+                                                  </uix:NClick>
+                                                  <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="354,114" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_5" Version="V3" />
+                                                  <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FETCH'" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="NClick_63" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1326594/2023/tax-returns" CVScreenId="4cc63bf5-05d6-4f57-8dfd-3f1fe62c03e2" CvTextArea="1456, 622, 46, 16" CvTextArgument="FETCH" CvType="Text" DesignTimeRectangle="1376, 607, 178, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='FETCH' parentid='test-clientDetails' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='FETCH' parentid='test-clientDetails' tag='BUTTON' type='button' class='MuiButtonBase-root MuiButton-root jss15 MuiButton-outlined MuiButton-outlinedSecondary' check:innerText='FETCH' /&gt;" Guid="e44f72af-1eb9-47ee-9f27-4a9ea9208a77" InformativeScreenshot="a2c27b21830b40389295ea4926a0e2aa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                                    </uix:NClick.Target>
+                                                  </uix:NClick>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </ui:InterruptibleWhile.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InterruptibleWhile>
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                              </Sequence>
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware.ToString = &quot;CCH Axcess Tax&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_11">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,948" sap2010:WorkflowViewState.IdRef="Sequence_175">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                              <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="354,114" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_7" Version="V3" />
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FETCH'" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NClick_66" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="067c372c-2f95-43c9-9577-ccf70b1aeb3b" DesignTimeRectangle="1374, 487, 174, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='FETCH' parentid='test-clientDetails' tag='BUTTON' /&gt;" Guid="206644ef-47b1-454e-b19b-56c1dec758f4" ImageBase64="" InformativeScreenshot="8d6924feba590a8a2f134b14b6e0dfae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Delay_9" />
+                              <uix:NCheckState DisplayName="Check App State 'Federal'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="NCheckState_38" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Timeout="200" Version="V4">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_187">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_188">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="4a23b415-dec6-4c04-8d1b-431e3e8b3c6b" CvTextArea="1422, 558, 54, 14" CvTextArgument="Federal" CvType="Text" DesignTimeRectangle="1422, 557, 54, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Federal' parentid='test-clientDetails' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Federal' parentid='test-clientDetails' tag='SPAN' type='' class='t1POm' check:innerText='Federal' /&gt;" Guid="6fbcdf94-aa1f-4dbe-8686-6a6ecd58469a" InformativeScreenshot="1fd30c9aad4d35a5394cf6d0324590ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                              </uix:NCheckState>
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_178">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+                                      <ui:RetryScope.ActivityBody>
+                                        <ActivityAction>
+                                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="Sequence_170">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FETCH'" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="NClick_64" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1305066/2023/tax-returns" DesignTimeRectangle="1376, 607, 178, 45" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl aaname='FETCH' parentid='test-clientDetails' tag='BUTTON' /&gt;" Guid="0b022edb-df5e-4bc5-a9c8-17d3977e2138" ImageBase64="" InformativeScreenshot="7cf924304a6599c94403c0848fc2d799.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:RetryScope.ActivityBody>
+                                      <ui:RetryScope.Condition>
+                                        <ActivityFunc x:TypeArguments="x:Boolean">
+                                          <uix:NCheckState DisplayName="Check App State 'Fetching 2023'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,177" sap2010:WorkflowViewState.IdRef="NCheckState_34" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Timeout="15" Version="V3">
+                                            <uix:NCheckState.IfExists>
+                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_171">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfExists>
+                                            <uix:NCheckState.IfNotExists>
+                                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_172">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </uix:NCheckState.IfNotExists>
+                                            <uix:NCheckState.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1305118/2023/tax-returns" CvTextArea="1466, 564, 190, 17" CvTextArgument="Fetching 2023 Tax Summary" CvType="Text" DesignTimeRectangle="1467, 563, 189, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Fetching 2023 Tax Summary' parentid='test-clientDetails' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fetching 2023 Tax Summary' parentid='test-clientDetails' tag='SPAN' type='' class='_1Kw1M' check:innerText='Fetching 2023 Tax Summary' /&gt;" Guid="639ab975-264e-4a57-be6a-170d76d24594" InformativeScreenshot="da7086988301fdfb6298ac1d181a07ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                            </uix:NCheckState.Target>
+                                          </uix:NCheckState>
+                                        </ActivityFunc>
+                                      </ui:RetryScope.Condition>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:RetryScope>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:CommentOut>
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,288" sap2010:WorkflowViewState.IdRef="Sequence_179">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NCheckState DisplayName="Check App State 'Fetching 2023'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="354,200" sap2010:WorkflowViewState.IdRef="NCheckState_35" Mode="WaitDisappear" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Timeout="200" Version="V3">
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target disappears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_173">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_174">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1305066/2023/tax-returns" DesignTimeRectangle="1364, 533, 395, 198" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='14' parentid='test-clientDetails' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='PF5lZ' parentid='test-clientDetails' tag='DIV' aaname='' check:innerText='Fetching 2023 Tax Summary&amp;#xD;&amp;#xA;This may take a few minutes to fetch.&amp;#xD;&amp;#xA;You may leave and return later.' /&gt;" Guid="0f28330a-9064-4497-91ad-95adb18ee45b" InformativeScreenshot="6ce3ae80cfa338dfd7681d0096ad15e1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                    </uix:NCheckState>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:CommentOut>
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware = &quot;UltraTax CS&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_12">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,315" sap2010:WorkflowViewState.IdRef="Sequence_176">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Delay Duration="00:04:00" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                              <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="354,105" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_6" Version="V3" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                      </sc:BindingList>
+                    </ui:IfElseIf.ConditionBlocks>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:IfElseIf>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Federal'" sap:VirtualizedContainerService.HintSize="545.6,189.6" sap2010:WorkflowViewState.IdRef="NClick_43" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1325726/2024/tax-returns" CVScreenId="6389a8b0-5152-44c9-91e9-c897a8cd1a63" CvTextArea="1435, 762, 67, 17" CvTextArgument="Federal" CvType="Text" DesignTimeRectangle="1436, 760, 67, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='vyvsD' parentid='test-clientDetails' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='vyvsD' parentid='test-clientDetails' tag='SPAN' type='' aaname='Federal' check:innerText='Federal' /&gt;" Guid="9e0aba4c-2131-4aac-9b77-0a16a9b769fc" InformativeScreenshot="b78dffe6b7ea04278f89719303ebbc49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[io_dt_DataofStates]" DelayBefore="3" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='State'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='AGI'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Taxable Income'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Effective Tax Rate'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='Total Tax'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column5' Name='Amount Owed'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column5' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/cpa.html#/cpa/client/1390702/2023/tax-returns" DesignTimeRectangle="1364, 537, 371, 652" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='gRLwt' parentid='test-clientDetails' tag='DIV' /&gt;" Guid="bff5ddb0-b251-48cd-9d06-5b07c24cb4c1" InformativeScreenshot="f3722bf2b71e607eb6d77f85c6d4e1a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='cchtaxabc finaltest03 - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NExtractData>
+            <If Condition="[in_Functionality = &quot;Fetch&quot; Or in_Functionality = &quot;Manual Fetch&quot;]" DisplayName="If (Write Excel)" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,136.8" sap2010:WorkflowViewState.IdRef="Sequence_180">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+                    <ui:IfElseIf.ConditionBlocks>
+                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                        <ui:IfElseIfBlock BlockType="If" Condition="[in_str_TaxSofware.ToString = &quot;UltraTax CS&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_105">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[io_dt_DataofStates]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="UltraTaxCS_Fetch" WorkbookPath="[in_Config(&quot;str_DataReturnExcel&quot;).ToString]" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware.ToString = &quot;CCH Axcess Tax&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_5">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_106">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[io_dt_DataofStates]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="CCH Tax_Fetch" WorkbookPath="[in_Config(&quot;str_DataReturnExcel&quot;).ToString]" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware.ToString = &quot;GoSystem Tax RS&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_6">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[io_dt_DataofStates]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_3" SheetName="GoSystem_Fetch" WorkbookPath="[in_Config(&quot;str_DataReturnExcel&quot;).ToString]" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                      </sc:BindingList>
+                    </ui:IfElseIf.ConditionBlocks>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:IfElseIf>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,136.8" sap2010:WorkflowViewState.IdRef="Sequence_184">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="IfElseIf_5">
+                    <ui:IfElseIf.ConditionBlocks>
+                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                        <ui:IfElseIfBlock BlockType="If" Condition="[in_str_TaxSofware.ToString = &quot;UltraTax CS&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_13">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_181">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[io_dt_DataofStates]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="UltraTaxCS" WorkbookPath="[in_Config(&quot;str_DataReturnExcel&quot;).ToString]" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware.ToString = &quot;CCH Axcess Tax&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_14">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[io_dt_DataofStates]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_5" SheetName="CCH Tax" WorkbookPath="[in_Config(&quot;str_DataReturnExcel&quot;).ToString]" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSofware.ToString = &quot;GoSystem Tax RS&quot;]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_15">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_183">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[io_dt_DataofStates]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="353.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_6" SheetName="GoSystem" WorkbookPath="[in_Config(&quot;str_DataReturnExcel&quot;).ToString]" />
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                      </sc:BindingList>
+                    </ui:IfElseIf.ConditionBlocks>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:IfElseIf>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[in_Functionality = &quot;Manual Fetch&quot;]" sap:VirtualizedContainerService.HintSize="545.6,1457.6" sap2010:WorkflowViewState.IdRef="If_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,684.8" sap2010:WorkflowViewState.IdRef="Sequence_195">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'TAXCADDY'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_69" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="4ffa4f33-0cd0-418b-a5ee-35a0eb3e1232" DesignTimeRectangle="1695, 140, 165, 44" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='TAXCADDY' tag='BUTTON' /&gt;" Guid="d7411f62-6ae8-49c1-bff3-645f723f5e51" ImageBase64="" InformativeScreenshot="3353aeecfacffb5f14584e4a00dd57c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'TAXCADDY'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_70" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="69371ff8-5e05-4bfc-a612-facdf3a4ad58" CvTextArea="1702, 206, 66, 15" CvTextArgument="FileRoom" CvType="Text" DesignTimeRectangle="1684, 195, 188, 37" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="&lt;webctrl tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LI' type='' class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-pi03jc' aaname='FileRoom' check:innerText='FileRoom' /&gt;" Guid="c6130cef-8c40-42ab-bfa8-3fc4a44b3e2f" InformativeScreenshot="5831099731502c5432167cd986fdd841.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="353.6,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_4" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_38&quot;,&quot;TC_39&quot;,&quot;TC_40&quot;,&quot;TC_41&quot;,&quot;TC_42&quot;,&quot;TC_43&quot;}]" in_strStatus="[&quot;NA&quot;]" in_strSubComponent="Dashboard">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <s:SanityReport_TCFiltering.in_strComments>
+                      <InArgument x:TypeArguments="x:Object" />
+                    </s:SanityReport_TCFiltering.in_strComments>
+                  </s:SanityReport_TCFiltering>
+                  <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_4" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </o:OCS_GenerateReportOutput>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,602.4" sap2010:WorkflowViewState.IdRef="Sequence_196">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filing Instructions'" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_53" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com" CVScreenId="16834f40-4f24-48d6-bcc0-216b3d46e00e" DesignTimeRectangle="222, 872, 25, 25" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg&amp;gt;path' idx='2' parentid='test-clientDetails' tag='path' /&gt;" Guid="b80d5e2d-183f-4e82-89b5-957b6f4cb23c" InformativeScreenshot="832267120b07ca335231c0b6c13f9f27.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='cchtaxabc LiveOCSTEST8 - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="16834f40-4f24-48d6-bcc0-216b3d46e00e" CvTextArea="187, 810, 163, 22" CvTextArgument="Filing Instructions" CvType="Text" DesignTimeRectangle="188, 808, 1124, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Filing Instructions' parentid='test-clientDetails' tag='DIV' type='' class='t6ffR' check:innerText='Filing Instructions' /&gt;" Guid="41871c28-7491-4b3b-bdf0-eb17cfb35e97" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_43" Message="[&quot;Tax Return document is selected&quot;]" />
+                  <Sequence DisplayName="Open Document for Tax Return" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_140">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NMouseScroll KeyModifiers="{x:Null}" DelayBefore="5" Direction="Down" DisplayName="Mouse Scroll 'u Fultrataxabc'" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="NMouseScroll_6" InteractionMode="HardwareEvents" MovementUnits="5" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+                      <uix:NMouseScroll.Target>
+                        <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/client/1324414/2023/tax-documents/1002094501?workflow=view&amp;type=requests&amp;isDeleted=false" DesignTimeRectangle="9, 271, 1920, 758" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='test-clientDetails' tag='DIV' /&gt;" Guid="79da87a2-ac50-4740-8641-2d5a2a3da80e" ImageBase64="" InformativeScreenshot="5276f8cadb5aa7f5d02ac07eb92d2047.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NMouseScroll.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NMouseScroll>
+                    <uix:NCheckState DisplayName="Check App State 'DIV'" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_27" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,635.2" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NHighlight Color="Gold" DisplayName="Highlight 'DIV'" HighlightTime="1" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NHighlight_4" ScopeIdentifier="8200a1e5-3254-4c46-9db1-4ec65c39e717" Version="V3">
+                            <uix:NHighlight.Target>
+                              <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/foxit/viewer.html?file=https%3A%2F%2Fa208548-taxcaddy-storage-prd.s3.amazonaws.com%2F67893c24-64af-4eb3-9fff-1fe337878b6e%3FAWSAccessKeyId%3DAKIAYJODUDBDFOQR3ZGU%26Expires%3D1712922068%26Signature%3DAKubIW2LUk7lrypHg2TqNxb%252Fjq4%253D&amp;viewOnly=false&amp;filename=2023%20Federal%20E_File%20Authorization_pdf" DesignTimeRectangle="593, 109, 765, 1260" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl src='./foxit/viewer.html?file=*-taxcaddy-storage-*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' isleaf='1' parentid='pdf_doc_unique_*' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl src='./foxit/viewer.html?file=https%3A%2F%2Fa208548-taxcaddy-storage-*' tag='IFRAME' /&gt;&lt;webctrl type='' class='fv__hand-state-contextmenu-container fv__contextmenu-container' isleaf='1' parentid='pdf_doc_unique_1712921770005_0' tag='DIV' aaname='' /&gt;" Guid="f24dc3df-2c81-4a5c-8ff1-1e73d0a5226b" ImageBase64="" InformativeScreenshot="e6021b8066d50f72424ded41b9c57830.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                            </uix:NHighlight.Target>
+                          </uix:NHighlight>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,176" sap2010:WorkflowViewState.IdRef="LogMessage_40" Message="[&quot;Deliverables are visible&quot;]" />
+                          <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="387.2,179.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(esc)][u(hk)]" Version="V3" />
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_61" Message="[&quot;Deliverables are not visible&quot;]" />
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/foxit/viewer.html?file=https%3A%2F%2Fa208548-taxcaddy-storage-prd.s3.amazonaws.com%2F74c65323-c425-489f-ab64-d52f9d3c57c1%3FAWSAccessKeyId%3DAKIAYJODUDBDFOQR3ZGU%26Expires%3D1712922222%26Signature%3Dpsxdo4i1VKTpXepqfBEXH0msmDo%253D&amp;viewOnly=false&amp;filename=2023%20California%20E_File%20Authorization_pdf" DesignTimeRectangle="593, 99, 765, 1260" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl src='./foxit/viewer.html?file=*-taxcaddy-storage-*' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' isleaf='1' parentid='pdf_doc_unique_*' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl src='./foxit/viewer.html?file=https%3A%2F%2Fa208548-taxcaddy-storage-*' tag='IFRAME' /&gt;&lt;webctrl type='' class='fv__hand-state-contextmenu-container fv__contextmenu-container' isleaf='1' parentid='pdf_doc_unique_1712921923604_0' tag='DIV' aaname='' /&gt;" Guid="6501f8ce-e5b8-4e7e-8b7b-809b7fa228cf" ImageBase64="" InformativeScreenshot="3bfe2b7194ebbd4b2508d775cc4ce3db.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_49" Message="[&quot;TC_38 : Verify that user should  check tax summary data under tax return section for federal and states-- AGI : Pass&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_50" Message="[&quot;TC_39 : Verify that user should  check tax summary data under tax return section for federal and states- Taxable income  : Pass&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_51" Message="[&quot;TC_40 : Verify that user should  check tax summary data under tax return section for federal and states- Tax : Pass&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_52" Message="[&quot;TC_41 : Verify that user should  check tax summary data under tax return section for federal and states-Amount refunded you : Pass&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_54" Message="[&quot;TC_42 : Verify that user should  check tax summary data under tax return section for federal and states- Amount you owe : Pass&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_53" Message="[&quot;TC_43 : Verify that effective tax rate is not  applicble other  state : Pass&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_3" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_38&quot;,&quot;TC_39&quot;,&quot;TC_40&quot;,&quot;TC_41&quot;,&quot;TC_42&quot;,&quot;TC_43&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <s:SanityReport_TCFiltering.in_strComments>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </s:SanityReport_TCFiltering.in_strComments>
+                    </s:SanityReport_TCFiltering>
+                    <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,48" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_3" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </o:OCS_GenerateReportOutput>
+                  </Sequence>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_44" Message="[&quot;Navigating to Tax Payment Document&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SequenceforTaxPaymentDocument - Invoke Workflow File (SequenceforTaxPaymentDocument.xaml)" sap:VirtualizedContainerService.HintSize="449.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Functionality\SequenceforTaxPaymentDocument.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_47" Message="[&quot;TC_32 : Verify that data delivered to Tax Caddy.by every nodes- Document , Tax return and Tax Payment : Pass&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_48" Message="[&quot;TC_33 : Verify that user shoud open deliverables documents under respective nodes Document, Tax return, Tax payment : Pass&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <s:SanityReport_TCFiltering in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_2" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_32&quot;,&quot;TC_33&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="Dashboard">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <s:SanityReport_TCFiltering.in_strComments>
+                <InArgument x:TypeArguments="x:Object" />
+              </s:SanityReport_TCFiltering.in_strComments>
+            </s:SanityReport_TCFiltering>
+            <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="545.6,49.6" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_2" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </o:OCS_GenerateReportOutput>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="9f6c8ae8de9f0d88306b43d939ef92d8.jpg" Selector="&lt;html app='chrome.exe' title='* - TaxCaddy CPA' /&gt;" Title="cchtaxabc LiveOCSTEST8 - TaxCaddy CPA" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

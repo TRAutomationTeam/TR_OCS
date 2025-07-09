@@ -1,0 +1,430 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence_TEST_Delete" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1408.8,1064" sap2010:WorkflowViewState.IdRef="Sequence_TEST_Delete_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ucat="clr-namespace:UiPath.Core.Activities.TextModifications;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence_TEST_Delete" sap:VirtualizedContainerService.HintSize="512,999.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ReadPdf" />
+      <Variable x:TypeArguments="x:String" Name="str_getocrpdfamount" />
+      <Variable x:TypeArguments="x:String" Name="ocrnewgettext" />
+      <Variable x:TypeArguments="x:Boolean" Name="isFirstRun" />
+      <Variable x:TypeArguments="x:Int32" Name="indexcheck" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Verify &quot;2023 Federal Form 1040-ES1&quot; PDF Page" sap:VirtualizedContainerService.HintSize="449.6,862.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="ad3e923e-aba4-4c69-b2d9-cf0ef83fa6ac" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="416,613.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="ocrnewgettext" />
+              <Variable x:TypeArguments="x:String" Name="get1040ESamount" />
+              <Variable x:TypeArguments="x:String" Name="io_str_getAmountnew" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="C:\Users\6125716\Downloads\download.pdf" sap:VirtualizedContainerService.HintSize="353.6,115.2" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ReadPdf]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ReadPDFText>
+            <ui:ModifyText DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="ModifyText_2" OutputText="[io_str_getAmountnew]" SourceText="[get1040ESamount]">
+              <ui:ModifyText.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_8" MatchCase="True" SearchText="$">
+                      <ucat:FindAndReplaceTextModification.ReplaceText>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ucat:FindAndReplaceTextModification.ReplaceText>
+                    </ucat:FindAndReplaceTextModification>
+                    <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_9" MatchCase="True" SearchText=".00">
+                      <ucat:FindAndReplaceTextModification.ReplaceText>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ucat:FindAndReplaceTextModification.ReplaceText>
+                    </ucat:FindAndReplaceTextModification>
+                    <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_10" MatchCase="True" SearchText=",">
+                      <ucat:FindAndReplaceTextModification.ReplaceText>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ucat:FindAndReplaceTextModification.ReplaceText>
+                    </ucat:FindAndReplaceTextModification>
+                    <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_11" MatchCase="True" SearchText="Dollars">
+                      <ucat:FindAndReplaceTextModification.ReplaceText>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ucat:FindAndReplaceTextModification.ReplaceText>
+                    </ucat:FindAndReplaceTextModification>
+                    <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_12" MatchCase="True" SearchText=" ">
+                      <ucat:FindAndReplaceTextModification.ReplaceText>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ucat:FindAndReplaceTextModification.ReplaceText>
+                    </ucat:FindAndReplaceTextModification>
+                    <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_13" MatchCase="True" SearchText="[vbCrLf]">
+                      <ucat:FindAndReplaceTextModification.ReplaceText>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ucat:FindAndReplaceTextModification.ReplaceText>
+                    </ucat:FindAndReplaceTextModification>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ModifyText.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ModifyText>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="353.6,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[ReadPdf]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </WriteLine>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'DIV'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="GetOCRText_2">
+                    <ui:GetOCRText.OCREngine>
+                      <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                        <ActivityFunc.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                        </ActivityFunc.Argument>
+                        <p:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseAccents="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Screen OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="auto" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                      </ActivityFunc>
+                    </ui:GetOCRText.OCREngine>
+                    <ui:GetOCRText.Target>
+                      <ui:Target Element="{x:Null}" Id="f1ebb70a-d311-4ff2-8ef4-1521e8d2a70a" InformativeScreenshot="59639be80f4b4b447a79d64387c813c7" Selector="&lt;webctrl src='/viewer.html' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='pdf_doc_unique_*' tag='DIV' /&gt;">
+                        <ui:Target.ClippingRegion>
+                          <ui:Region Rectangle="763, 103, 172, 37" />
+                        </ui:Target.ClippingRegion>
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetOCRText.Target>
+                    <ui:GetOCRText.Text>
+                      <OutArgument x:TypeArguments="x:String">[str_getocrpdfamount]</OutArgument>
+                    </ui:GetOCRText.Text>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetOCRText>
+                  <ui:ModifyText DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="ModifyText_1" OutputText="[ocrnewgettext]" SourceText="[str_getocrpdfamount]">
+                    <ui:ModifyText.Body>
+                      <ActivityAction>
+                        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_1" MatchCase="True" SearchText="$">
+                            <ucat:FindAndReplaceTextModification.ReplaceText>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ucat:FindAndReplaceTextModification.ReplaceText>
+                          </ucat:FindAndReplaceTextModification>
+                          <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_2" MatchCase="True" SearchText=".00">
+                            <ucat:FindAndReplaceTextModification.ReplaceText>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ucat:FindAndReplaceTextModification.ReplaceText>
+                          </ucat:FindAndReplaceTextModification>
+                          <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_3" MatchCase="True" SearchText=",">
+                            <ucat:FindAndReplaceTextModification.ReplaceText>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ucat:FindAndReplaceTextModification.ReplaceText>
+                          </ucat:FindAndReplaceTextModification>
+                          <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_4" MatchCase="True" SearchText="S">
+                            <ucat:FindAndReplaceTextModification.ReplaceText>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ucat:FindAndReplaceTextModification.ReplaceText>
+                          </ucat:FindAndReplaceTextModification>
+                          <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_5" MatchCase="True" SearchText="[vbCrLf]">
+                            <ucat:FindAndReplaceTextModification.ReplaceText>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ucat:FindAndReplaceTextModification.ReplaceText>
+                          </ucat:FindAndReplaceTextModification>
+                          <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_6" MatchCase="True" SearchText=" ">
+                            <ucat:FindAndReplaceTextModification.ReplaceText>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ucat:FindAndReplaceTextModification.ReplaceText>
+                          </ucat:FindAndReplaceTextModification>
+                          <ucat:FindAndReplaceTextModification DisplayName="Find and replace text" sap:VirtualizedContainerService.HintSize="333.6,160" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_7" MatchCase="True" SearchText=".">
+                            <ucat:FindAndReplaceTextModification.ReplaceText>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ucat:FindAndReplaceTextModification.ReplaceText>
+                          </ucat:FindAndReplaceTextModification>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ModifyText.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ModifyText>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[ocrnewgettext]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </WriteLine>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NGetText DisplayName="Get Text 'AMOUNT DUE'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="ad3e923e-aba4-4c69-b2d9-cf0ef83fa6ac" TextString="[get1040ESamount]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://reviewerdashboard.sureprep.com/v2/dashboard/2023/0/1247645/deliverables/payments/67A0D455-49B8-449D-9653-11F4FC18C19B" CvTextArea="1070, 572, 78, 16" CvType="AnyWordGroup" DesignTimeRectangle="1070, 572, 78, 16" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='$*' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='$49,636.00' tag='DIV' type='' class='MjM6S' /&gt;" Guid="8ed24162-1584-4081-85ef-6972d8f39924" ImageBase64="" InformativeScreenshot="bf6977d68f9102c19332e026d7d19784.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" SearchSteps="CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="1070, 546, 106, 15" CvTextArgument="AMOUNT DUE" CvType="Text" DesignTimeRectangle="1072, 543, 399, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='AMOUNT DUE' parentid='test-payment-body' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='AMOUNT DUE' parentid='test-payment-body' tag='DIV' type='' class='P9Wgn' check:innerText='AMOUNT DUE' /&gt;" Guid="5136c546-3cd3-4218-bf5d-9ec59cc57964" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZMAAAAYCAYAAAA/HBDOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASpSURBVHhe7ZvPSxxJFMf3f/GW29zm5s2btxw9y2AYiCBoIJBAMIeFIbC45BCRgUbBYWBQHHBYWcOAQcwyIIkENhEkYkLEhARx0ODwtqr61a+eajZ0O7u6+/1AoVOvu63x8D79XnX/RAAAAEBOIBMAAAC5gUwAAADkBjIBAACQG8gEAABAbiATAAAAuYFMAAAA5AYyAQAAkJuwTM5e0sR4lYbUaNDKGc9rjto0auJ1qn3heU3vDT0o63iVJnd4XnN6QLVqnUacYwr36vS4/YHO+ZCYQ5q/n3KNnWZ87v22OCpmc85eb7ShZxm9Zn28Pj9tzO2q03zseswoRVR82KT5neTa7XpS1zLepE2eSl2P8/0AAOC6EpTJ+fOGl9Amnnc5wngyCcRftajgxD0RnO7S5F0bGypHVCjZz0WRxL/xoXlkMlQSEjzlgCQpk84GDU8tqVHUUpNi4Lnh6mt1mo8jE7FueVzhDn8Ww197dpkU9Brk+HkbMgEAXHsCMunSSkUmtYgeNETClQludpuOOarQyVCKQP580vHuyjsLkThfJMLpODlaEXRp/Uk8N3R3lWofL3j+gg5/X6WinJd/d/eS57PIRAiBZVVceMMRQVImDoeN5b5rhbHrsYK4oON2k9depbGW/U9lk4kzBwAAN4R+mXzZpjGZ1MotemHaVYlWlknMqzQhhVESCbDHMdqnypSYm27SzKw81xGB0z7rq2aErqJHccy2mLJVJpOLLMHxZZo/4uDAZCK5pBfPpED9a0AmAID/C30yOW7VVVIrPIvv6uMqQ95xf1afFU5iXllcEnFRTbzi2Ns4kQ8vvuwXAce8JO/wrp5M6hllstMVv3Ny11XVQGUi2FqNr+HIIJtMEm2uYLsNAACuFwmZfKaaqSa41aT3Px5t2VaXm5g5XuCW0p6SyxJV3gZEYBJmWCb9ST2rTMSHE1Fhqb2YSMll4DIJVBZZZeKN4IMAAABwvfBlcrJFt0MJTY06RSd8nJuYdStsaoP26IAqsu2lfg+I4B+rTOSnSxabmJsW63k/YJlcWWXizAEAwA3Bk8nxWtziShu317g28e7yLzlpimrkt00li7hKCYjgR/dMnurWjr2G12YT6HZcukwEZ7s0yU9qjS20BiiTQFtNoNejqzaDedoNMgEA/DdwZGKTeTJxm0eFdasr0TLS8VvqMVm9fxKqKtKf5nq3UucEK8/XT3O5G9sb1PnG898P6Fe+tt7bkfTJRGCko8dVy6TXpb21hnmaa6JtJWnkXG7Y79r7Suu/8HdyW4eQCQDgBmNlYlpcgRaUactwLCET7yXHcos6ci4oE0HyPZPEKD7139Wgoy0add5D8UbJX2tIJtTbj1tv+pwrkkn8nklEt/R1xRgRFYi39rPXNJP6XSOa+cOpzpw9E7xnAgC4aRiZmISq9juS8OO+Iq7uyJMycTbubaWQIhPJD78Bz3zq0OPZZfuC4J2IRiptW6kwQZkIzkWijqseMa5KJnrItcxuUG3/Kx+T4PRPiubq/ouRD1u0bqoyxpGJN/52TQAA8O/jb8ADAAAAGYBMAAAA5AYyAQAAkBvIBAAAQG4gEwAAADkh+gvEq+fgMy7NRQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="353.6,115.2" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[ocrnewgettext.ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </WriteLine>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="353c59ec5366af5ec120fbbc2dc92813.jpg" Selector="&lt;html app='chrome.exe' title='Reviewer Dashboard' /&gt;" Title="Reviewer Dashboard" Url="https://qa-rd.sureprep.com/view-deliverable/v2/dashboard/*" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Sequence sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ocrnewgettext]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">USH4856</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ocrnewgettext]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(ocrnewgettext, "[^\d]", "")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[ocrnewgettext]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </WriteLine>
+    </Sequence>
+  </Sequence>
+</Activity>
