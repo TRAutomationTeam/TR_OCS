@@ -301,9 +301,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="683.2,2734.4" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="683.2,2939.2" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="638.4,2258.4" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="638.4,2463.2" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -478,10 +478,10 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Handle System Exception" sap:VirtualizedContainerService.HintSize="470.4,850.4" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                        <Sequence DisplayName="Handle System Exception" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -542,13 +542,13 @@
                     </Catch>
                   </TryCatch.Catches>
                   <TryCatch.Finally>
-                    <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="601.6,2004" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                    <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="601.6,2208.8" sap2010:WorkflowViewState.IdRef="Sequence_47">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="568,1944" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="568,2148.8" sap2010:WorkflowViewState.IdRef="Sequence_53">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -585,7 +585,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:CommentOut>
-                        <ui:IfElseIfV2 Condition="[System.IO.File.Exists(Config(&quot;SanityReport_ReportPath&quot;).ToString.Split(&quot;.xlsx&quot;)(0)+&quot;_&quot;+TransactionItem.SpecificContent(&quot;FirstName&quot;).ToString+&quot;.xlsx&quot;)]" DisplayName="Else If - Check Sanity File exist with BinderID/SPClientID" sap:VirtualizedContainerService.HintSize="534.4,1804" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                        <ui:IfElseIfV2 Condition="[System.IO.File.Exists(Config(&quot;SanityReport_ReportPath&quot;).ToString.Split(&quot;.xlsx&quot;)(0)+&quot;_&quot;+TransactionItem.SpecificContent(&quot;FirstName&quot;).ToString+&quot;.xlsx&quot;)]" DisplayName="Else If - Check Sanity File exist with BinderID/SPClientID" sap:VirtualizedContainerService.HintSize="534.4,2008.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                           <ui:IfElseIfV2.Else>
                             <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_52">
                               <sap:WorkflowViewStateService.ViewState>
@@ -606,17 +606,18 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:IfElseIfV2.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="500.8,1368.8" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="500.8,1573.6" sap2010:WorkflowViewState.IdRef="Sequence_50">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Get Report Summary Details" sap:VirtualizedContainerService.HintSize="467.2,1141.6" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                              <Sequence DisplayName="Get Report Summary Details" sap:VirtualizedContainerService.HintSize="467.2,1346.4" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="TestReportExcel" />
                                   <Variable x:TypeArguments="s:DateTime" Name="dtStartTime" />
+                                  <Variable x:TypeArguments="ui:CurrentJobInfo" Name="currentJobInfo" />
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -658,7 +659,9 @@
                                 <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[Config(&quot;TestSummary_TaxYear&quot;).ToString]" DisplayName="Tax Year" sap:VirtualizedContainerService.HintSize="433.6,148" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="[Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[TransactionItem.SpecificContent(&quot;TaxYear&quot;).ToString.Trim]" WorkbookPath="[TestReportExcel]" />
                                 <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[Config(&quot;TestSummary_EndTimeIndex&quot;).ToString]" DisplayName="End Time" sap:VirtualizedContainerService.HintSize="433.6,148" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="[Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[DateTime.Now.ToLocalTime.ToString]" WorkbookPath="[TestReportExcel]" />
                                 <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[Config(&quot;TestSummary_UserIndex&quot;).ToString]" DisplayName="User Identity" sap:VirtualizedContainerService.HintSize="433.6,148" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="[Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[Environment.UserName]" WorkbookPath="[TestReportExcel]" />
-                                <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[Config(&quot;TestSummary_ExecutionStatus&quot;).ToString]" DisplayName="Execution Status" sap:VirtualizedContainerService.HintSize="433.6,139.2" sap2010:WorkflowViewState.IdRef="WriteCell_11" SheetName="[Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[TransactionItem.Status.ToString]" WorkbookPath="[TestReportExcel]" />
+                                <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[Config(&quot;TestSummary_ExecutionStatus&quot;).ToString]" DisplayName="Execution Status" sap:VirtualizedContainerService.HintSize="433.6,148" sap2010:WorkflowViewState.IdRef="WriteCell_11" SheetName="[Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[TransactionItem.Status.ToString]" WorkbookPath="[TestReportExcel]" />
+                                <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[currentJobInfo]" />
+                                <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="B9" DisplayName="Attended/Unattended exec" sap:VirtualizedContainerService.HintSize="433.6,139.2" sap2010:WorkflowViewState.IdRef="WriteCell_13" SheetName="[Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[currentJobInfo.UserEmail]" WorkbookPath="[TestReportExcel]" />
                               </Sequence>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_DataService_CRUD - Invoke Workflow File (Functionality\Report\TestSummary_DataService_CRUD.xaml)" sap:VirtualizedContainerService.HintSize="467.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Functionality\Report\TestSummary_DataService_CRUD.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
@@ -1258,7 +1261,7 @@
                 <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="452,553.6" sap2010:WorkflowViewState.IdRef="Transition_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">381.40000000000003,677.6 381.40000000000003,707.6000000000001 483.133333333333,707.6000000000001 483.133333333333,288.493333333333 453.133333333333,288.493333333333</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">381.40000000000003,677.6 381.40000000000003,707.6 483.133333333333,707.6 483.133333333333,288.493333333333 453.133333333333,288.493333333333</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">59</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">52</x:Int32>
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
