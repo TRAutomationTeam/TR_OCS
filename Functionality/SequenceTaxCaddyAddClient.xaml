@@ -20,7 +20,7 @@
   <this:SequenceTaxCaddyAddClient.in_TransactionItem>
     <InArgument x:TypeArguments="ui:QueueItem" />
   </this:SequenceTaxCaddyAddClient.in_TransactionItem>
-  <sap:VirtualizedContainerService.HintSize>1408.8,13317.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1112.8,14741.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -175,19 +175,19 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence - Tax Caddy Add Client" sap:VirtualizedContainerService.HintSize="1146.4,14040" sap2010:WorkflowViewState.IdRef="Sequence_581">
+  <Sequence DisplayName="Sequence - Tax Caddy Add Client" sap:VirtualizedContainerService.HintSize="910.4,14676.8" sap2010:WorkflowViewState.IdRef="Sequence_581">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Client Management - Administrative - TaxCaddy CPA" sap:VirtualizedContainerService.HintSize="819.2,14016.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Client Management - Administrative - TaxCaddy CPA" sap:VirtualizedContainerService.HintSize="848,14588" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="785.6,13776.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="814.4,14348" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="dtEndTime" />
             </Sequence.Variables>
@@ -209,7 +209,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Navigated to Administrative&quot;]" />
-            <uix:NCheckState DisplayName="Check App State 'Limited AccessDue'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="486.4,408" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Timeout="0" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Limited AccessDue'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="752,408" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Timeout="0" Version="V3">
               <uix:NCheckState.IfExists>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_294" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
                   <uix:NClick.Target>
@@ -242,9 +242,9 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="10" DisplayName="Click '2023'" sap:VirtualizedContainerService.HintSize="486.4,189.6" sap2010:WorkflowViewState.IdRef="NClick_27" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Timeout="30" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="20" DisplayName="Click '2023'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_27" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Timeout="30" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/cpa.html#/cpa/admin/clients/2023" CvElementArea="123, 457, 129, 53" CvTextArea="141, 477, 36, 16" CvTextArgument="2023" CvType="InputBox" DesignTimeRectangle="143, 470, 68, 28" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='pbwOG' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='pbwOG' tag='SPAN' type='' aaname='2023' check:innerText='2023' /&gt;" Guid="af88f1f9-d53d-4988-81b2-072d9c75ae38" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAgCAYAAACxSj5wAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKVSURBVGhD7ZYhbNtAFIYPFBgaBgws0FLALBW0MJZKwhJpxNKQVRQNVENVVDIVRdbAFFRZZSmolIFICTOqlIFJGZjkgEgtCDAIMCg4UPDv7nxNYs/1daiOdJ904Pl81t3nd++OQFOKFqRAC1KgBSnQghRoQQq0IAVakAItSIEWpEALUqAFKdCCFGQEJXcDuIcmCCGi1do+ZonslCQ/fXTepf3EsOH9iGVPCl2O8KVZhyG/YXzwMFrJTs56juDURs2Q3zgwYZ+OED/J/oqxFfQ4ZAtvoTeNkFAeRwjaTFbDx336BrAK4BATnesIlC2I/vbhGCa8KR/AidBrWPCu54gfWUhjhOc2E+liwmP+Rv9YCInW6RgaT9B9T2CezURcNcq32NKHRWz4D2kYXdRB2kM86+DE349BmgGyebTLBC7LFG8qwwLoTSv7IyrEKwQ5CMTqYwRNAvtbbhm/eqgRj2l4CS7IQPdOhgXc9y2F5LejVJCY+NFATvwefoPAHYtgSy7L8tCxC8PoIiyqMTRBdOuhfsDGL+SzivGyoIUPOzPxOXqsVhQLsuAvZbxLwrLHNNmYXKUXY2SRZnK9cVrTqkixoPWoYGH/mUE0wuUh25L9SD4ohq5C+CfsMDjZly0m/3rnJj/dshrETikZCp4i+FzO+Qy53ClmcVm6Td+SrCApx7kq/uuiJqlOMSmn/jl8nRzOXghicryaAfsiRBzH2SYuRvydIVrsHuTexkISXQTomAbbdrKfyzlid5qPQ0T5b4h7T4zJ1QDhn2RTc/gW6zGhlT/FRHZsCmeufdpuoOxNuo7ObraxE+ufsc9N3HMoZl8dWOxHbJ6bFpyzfbhJawrRghRoQQq0IAVakAItSIEWpEALKgX4CwvWpsWdAE8WAAAAAElFTkSuQmCC" InformativeScreenshot="f5ce0a6b57b93be4a4388373a17655a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Client Management - Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/cpa.html#/cpa/admin/clients/2023" CvElementArea="123, 457, 129, 53" CvTextArea="141, 477, 36, 16" CvTextArgument="2023" CvType="InputBox" DesignTimeRectangle="143, 470, 68, 28" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='pbwOG' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='pbwOG' tag='SPAN' type='' aaname='2023' check:innerText='2023' /&gt;" Guid="af88f1f9-d53d-4988-81b2-072d9c75ae38" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAgCAYAAACxSj5wAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKVSURBVGhD7ZYhbNtAFIYPFBgaBgws0FLALBW0MJZKwhJpxNKQVRQNVENVVDIVRdbAFFRZZSmolIFICTOqlIFJGZjkgEgtCDAIMCg4UPDv7nxNYs/1daiOdJ904Pl81t3nd++OQFOKFqRAC1KgBSnQghRoQQq0IAVakAItSIEWpEALUqAFKdCCFGQEJXcDuIcmCCGi1do+ZonslCQ/fXTepf3EsOH9iGVPCl2O8KVZhyG/YXzwMFrJTs56juDURs2Q3zgwYZ+OED/J/oqxFfQ4ZAtvoTeNkFAeRwjaTFbDx336BrAK4BATnesIlC2I/vbhGCa8KR/AidBrWPCu54gfWUhjhOc2E+liwmP+Rv9YCInW6RgaT9B9T2CezURcNcq32NKHRWz4D2kYXdRB2kM86+DE349BmgGyebTLBC7LFG8qwwLoTSv7IyrEKwQ5CMTqYwRNAvtbbhm/eqgRj2l4CS7IQPdOhgXc9y2F5LejVJCY+NFATvwefoPAHYtgSy7L8tCxC8PoIiyqMTRBdOuhfsDGL+SzivGyoIUPOzPxOXqsVhQLsuAvZbxLwrLHNNmYXKUXY2SRZnK9cVrTqkixoPWoYGH/mUE0wuUh25L9SD4ohq5C+CfsMDjZly0m/3rnJj/dshrETikZCp4i+FzO+Qy53ClmcVm6Td+SrCApx7kq/uuiJqlOMSmn/jl8nRzOXghicryaAfsiRBzH2SYuRvydIVrsHuTexkISXQTomAbbdrKfyzlid5qPQ0T5b4h7T4zJ1QDhn2RTc/gW6zGhlT/FRHZsCmeufdpuoOxNuo7ObraxE+ufsc9N3HMoZl8dWOxHbJ6bFpyzfbhJawrRghRoQQq0IAVakAItSIEWpEALKgX4CwvWpsWdAE8WAAAAAElFTkSuQmCC" InformativeScreenshot="f5ce0a6b57b93be4a4388373a17655a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Client Management - Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Visible" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -253,7 +253,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '2023'" sap:VirtualizedContainerService.HintSize="486.4,189.6" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '2023'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/cpa.html#/cpa/admin/clients/2023" CvTextArea="144, 566, 36, 15" CvTextArgument="2023" CvType="Text" DesignTimeRectangle="145, 563, 85, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span' tag='SPAN' /&gt;&quot;, in_str_TaxYear)]" FuzzySelectorArgument="&lt;webctrl aaname='2023' type='' tag='SPAN' class=' css-ks5qso' check:innerText='2023' /&gt;" Guid="84bbf202-3c9b-4c62-aecd-f4a6c9b9b640" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAbCAYAAAAXmyPIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMGSURBVGhD7ZfpS1RhFIf7T0SEpg9GCtlEi2u22OauWWlmWdGe2EIhFFFkpaa2SEUEbVYqmmlWSiWZiFSK4pY6mrtlGUV++8XvhftyZxzHgrzg+H54YO573nvn3ueeOefMrOEfY1BMLUqyASjJBqAkG4CSbABKsgEoyQagJBuAlWRL/xeknDwNd/e5cHFxwTwPD9x7mI+h0d9yT/fgCI4eT4Grq6vYk5C4E80dPTLeM/Qd2deuY76Xl4jPNpmQnnUF/SM/RXzg2y88LnyKwBUrRZz4ByxDWUWlvIazYSX5bOpFHEo+gvrmdiGlsOQ5PDw9kZtfJOKUTcHBoWGoa/okhB8+dgJR0THoGvgq9vClxMUn4F1tnbjG25oPWLR4Cc6nZ4p4fUsHNm6OQ1HpC/QOj4o9aZmXscBsRm19k7wXZ2LScrF7737sO5gkPlOsj68fyiurZbylsxcBgctRXFYh12yh4IioaPFS7MXbewaxKmgN8opK7ManO38lmdnKzxRJyRSrxZmJ8dsSkZF9Va7ZQskxm2JF5tqLN7Z1Yam3j8MXNZ1xKLmh1QI//wDx0+YxMy0kLFyWBg19ttvCvTwnO+fGuBjLz/uGFsRu2YoDScmybjsbE0rmA/PB9Q9/NzdvQslEv0Yo8UJGFiKjN6Czb9gqxv1a44tP2C76gD7uTNiVzAkgNe3SODn/kskUzCbIes1mp4/pYQm5deeBaLAzplxo2ccJQj+aEUc1WZseNHLzCuHr54+aj41W6/bgd+7YtWfCkjPdsZKsCQ5avVbUY32MsEExMyebLiiYjYzjm7bmiBkjmQ/KPw3ePr54VVWDpvbPEopkxnLPqTPnEBYRiVZLnxjJeBwaHiFLCGdqzrwFxc+srkFYGjg/339UgLbuAbGfazk3b8NkmoMnZeXyxpwJKZkSzOaFshnpoYA31bVin+0/PgrWsl6bJGzP12BNZ/lYHxIKNzc3scbrrAsOwcvXVfKmnA27jU/xf1GSDUBJNgAl2QCUZANQkg1ASTYAJXnKGcMfbxHx9ZuTx2wAAAAASUVORK5CYII=" InformativeScreenshot="487ee8945bbc5fafd1f02011a7ec95a2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Client Management - Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -264,9 +264,9 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Tax Year - &quot; + in_str_TaxYear +&quot; is Selected&quot;]" />
-            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="486.4,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="486.4,189.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Tax Year - &quot; + in_str_TaxYear +&quot; is Selected&quot;]" />
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="752,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="1146, 454, 29, 25" CvTextArea="1148, 459, 10, 11" CvTextArgument="+" CvType="Icon" DesignTimeRectangle="1150, 458, 22, 16" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg&amp;gt;path' idx='3' parentid='administrativeModules' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' parentid='administrativeModules' tag='path' aaname='' /&gt;" Guid="e368df6d-db46-4009-b7bd-3ab9032a1e39" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAUCAYAAACTQC2+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADmSURBVEhLzZSxDcIwEEXZhR4GgDkYACTKlLBCStiAAgpSUFFATZEFQoloUnsFoxfpJMec4hiiKMWTLPv+f2AsRsYY2wfDFhWv0q72dzvfZhWs2dNmhWgRhdPkZMfrQw32mmTRouXu9iURONMyoIokqJ1NkmOt3IVr1DLQqWi2OasZiBb9fXVa0EXm+MG1b8Veq8fgB33cEIV8eq4KWDdJIPrqfmWYorx42zTL7SK9Vk9Z5lizxxkzfg5UkQ9hiqQ4BLO+MCi6PJ5qWRvISk9QxKvSStrg/lMERVpBDNIzHFFX9CQy9gM2WK6t2JDwnQAAAABJRU5ErkJggg==" InformativeScreenshot="5c093324badda45b639dc1027c10c36a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -283,7 +283,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="486.4,189.6" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="1146, 454, 29, 25" CvTextArea="1148, 459, 10, 11" CvTextArgument="+" CvType="Icon" DesignTimeRectangle="1150, 458, 22, 16" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg&amp;gt;path' idx='3' parentid='administrativeModules' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' parentid='administrativeModules' tag='path' aaname='' /&gt;" Guid="e368df6d-db46-4009-b7bd-3ab9032a1e39" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAUCAYAAACTQC2+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADmSURBVEhLzZSxDcIwEEXZhR4GgDkYACTKlLBCStiAAgpSUFFATZEFQoloUnsFoxfpJMec4hiiKMWTLPv+f2AsRsYY2wfDFhWv0q72dzvfZhWs2dNmhWgRhdPkZMfrQw32mmTRouXu9iURONMyoIokqJ1NkmOt3IVr1DLQqWi2OasZiBb9fXVa0EXm+MG1b8Veq8fgB33cEIV8eq4KWDdJIPrqfmWYorx42zTL7SK9Vk9Z5lizxxkzfg5UkQ9hiqQ4BLO+MCi6PJ5qWRvISk9QxKvSStrg/lMERVpBDNIzHFFX9CQy9gM2WK6t2JDwnQAAAABJRU5ErkJggg==" InformativeScreenshot="5c093324badda45b639dc1027c10c36a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -300,8 +300,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clicked on Add Client&quot;]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="486.4,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_FirstName]" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clicked on Add Client&quot;]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="752,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_FirstName]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="272, 325, 293, 40" CvTextArea="285, 338, 118, 13" CvTextArgument="CLIENT FIRST NAME*" CvType="InputBox" DesignTimeRectangle="271, 369, 295, 42" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='MuiInputBase-input MuiOutlinedInput-input' tag='INPUT' type='text' aaname='' /&gt;" Guid="7a03773e-24aa-46f2-8cb0-1755525c4e2f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAScAAAAqCAYAAADxs50rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPDSURBVHhe7dg/bhNBGIdh7sIBuEAOkAtwAQpKKEE0UCFRQkkDQqIhBZGQoICCInEKhElFE0DIBSkoACEsmWbJu8q3TCa7sQO79kR6H2lke3b+rjK/rH2ukqQCGU6SinQknGazWTWZTKrxeFxtbW1ZLBbL4IW8IXfIn1QTTlwYjUZ1o+l0elgrScMib8gd8icNqCacuEiRpFXIM6gJJx6tfGKStCrkDzkUmnDiu58krVKaQ4aTpGIYTpKKZDhJKpLhJKlIhpOkIhlOkopkOEkqkuEkqUiGk2o/p7+r2xtv6lepBIaTqnvPdqv1W5t1OF2887z+LK3aIOH04u3n6vzlh025cPVx9e7T17r+yv3Xh63+2v/2qz4UvILDkfan0Jfra9c3jh0exr7xaLv+r884eV9K3idfY7SZtxbmj2tt8zFu2/optE2fTObtJxVzde2D1xxt497H53xN0Y82a9eeNG2lVes9nPhjTw9wimuLhlN+CBHt+C+fjt92mKm7dPdl59eUf10L/SJk6N+2zkAb1tB14E+7n/Wbm8f2xHqoz/cSc3Mt5p93X3cP2jFO1z2TlqnXcOKPnIPWdRj7CCf68/UjHafrMA8RTnVIHOzxw/6Puh3jdFkknBbdD2vY2N47Nh7zU0f/WDOiPm3fdV+lEvUaThwCDkPfgRCi3d6X70eCoe0wD7WWtB/1XU+JWCScFtlPuibatK0nXyd1eZjlbaSS9RpOHBQOUR+BkP4uEgGQtuPAxdeh/DCDunnhlM4Rv82kcyBfS75++tA3/W0nLBpO8/aT3jeu8z72FdfoE/uNNrzm4ZTu5aRglVbtTD45RTvGol1+mDHEWnht6wPac9gZN5wmnNC1H+rTUKHEPLGPdC7qGCefP92LVLpew4lDNvRvTmm7mO/Bq/dLCaeYr2t/+bpPG04xfrof6iJ8Qrr29H3MT1/mNJx0lvUaTuCPnwPXFgp9hxMYkyeJfNwhwgld/ZiHflwPeTjkFtlP271I+6XrYR6+XnKNufP528aSStV7OCEOWJQ4LHk9hcOSH1Lq8nb0zdshQmFZ4RTzPd35WL+ma8wPfh4OuXn7Oak/19lDvg/exzry/l33VSrRIOEkSf/LcJJUJMNJUpEMJ0lFMpwkFclwklQkw0lSkQwnSUUynCQVyXCSVKTWcBqPx9V0Oj38JEnLRf6QQ6EJp8lkUhdJWoU8g5pwms1m1c7OTn3RJyhJy0LekDuj0ajOodCEE7hAIx6t+O5nsVgsQxfyhtxJgwlHwkmSSmE4SSpQVf0ByUgdib1mwY4AAAAASUVORK5CYII=" InformativeScreenshot="a06eede3dc34fdf9a389d35dd10e21ee.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -318,7 +318,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_347" Message="[&quot;TC_02 &quot; + &quot;: To Verify that create TC client id at taxcaddy user should add unique client first name : Pass&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_347" Message="[&quot;TC_02 &quot; + &quot;: To Verify that create TC client id at taxcaddy user should add unique client first name : Pass&quot;]" />
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="752,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_LastName]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="573, 370, 293, 41" CvTextArea="587, 383, 113, 13" CvTextArgument="CLIENT LAST NAME*" CvType="InputBox" DesignTimeRectangle="572, 369, 293, 41" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;input' idx='2' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='MuiInputBase-input MuiOutlinedInput-input' aaname='' tag='INPUT' type='text' /&gt;" Guid="4c1c37b2-a135-47ff-b2a9-da6a641ae8b3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAScAAAAqCAYAAADxs50rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO6SURBVHhe7dnPrgxBGIZx9+IC3IALcANuwMKSrdiwIpYsbYjE6ixIJCxYSJwzsxDDBgshMok/iQWJmGRsWp7O+SY1pXp6jB6n8PySytHV1VXV7XyvnnGokaQKGU6SqrQUTvP5vJlOp81kMml2d3dtNptt6428IXfIn9QinDgxGo3aQbPZbL9XkraLvCF3xuPxUkAtwomTNEk6CHkGLcKJVyvfmCQdFPKHHAqLcOKznyQdpDSHDCdJ1TCcJFXJcJJUJcNJUpUMJ0lVMpwkVclwklQlw0lSlQyn/9iHz9+aizuP94+kuhhO/6lTVx82xy/dba7cedYcPbPT3Hvydv+MVIethBO/6IdPXl+0I6dvNk/ffGr7KYoc/4JTKPwEBZNeT+NazlNInE8x99kbe83X2fd2nvxaWn5N115CrJUXbWmNW+PXa6/bdw+prj1wzNx5P5g3nncc53uK6/jJ/PHcpZoMHk6rfuE5t2445cWLGHfs/O2l+UuFTd+Jy/fbMCnp2kvg/LFzt38aw3Fpb6Fv3V+5h649dPWzJmtzLg2n0n5jn4+ev/tpXakGg4YTxUbRRWHkhggnrr+w83hpnlJhR/FtGk7Mx5h0X/HWRH+XvnV/5R5KewB9rMH1pX5a/B10PUupdoOG06aBQIGtG06Me/X+y1JIlAp7070gvZZ9xDrgeNVHob51172HVXuIvefPib6dvVftdVyPfIz0txg0nCgaCm6IcEq/I4kwSMdRfPHRKC9spMVd0rUXpAXdNTff66Tf7YS+dde9h1V7iL2nazEHffzMw6n0LKXa/ZVvTjGOuRiXFy823QvjWSMt6FIIgX1Q7MwV+tZd5x769hB7Z1wEEX3Mk/ah61lKtRs0nCi4bX/nlI6L9a49eDFYOHFdPteqAs/P9a27zj307SHde/QznusMJ/0rBg0nUAgUX6k4hw4nMCdvFvm8fSHRtRf6OJfqmotj9pOO71t3nXvo20O6d/p5q4pnTjOc9C8YPJwQxRYtCifvp1E4ecHSl4/j2lJhMy99edD0hURpL/wPWj4/ouBHLz+259Nr8sLfJJzSeyidR+yB+dNwAn+OfaTj0PUspdptJZwk6XcZTpKqZDhJqpLhJKlKhpOkKhlOkqpkOEmqkuEkqUqGk6QqGU6SqlQMp8lk0sxms/0jSfqzyB9yKCzCaTqdtk2SDkKeQYtwms/nzXg8bk/6BiXpTyFvyJ3RaNTmUFiEEzjBIF6t+Oxns9ls227kDbmTBhOWwkmSamE4SapQ0/wA+Uo7mDe0eB4AAAAASUVORK5CYII=" InformativeScreenshot="53c077756bfba5c4a97c2611dfc00934.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
@@ -391,7 +391,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="790, 615, 284, 51" FullSelectorArgument="&lt;webctrl id='owner' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='owner' tag='INPUT' type='text' class='MuiInputBase-input MuiOutlinedInput-input css-1sxenmq' aaname='OWNER*' /&gt;" Guid="ea5f7bf2-13dd-4716-b39c-aac9c941cac2" InformativeScreenshot="d71a1f98ed1082dbaeec043e7a675c09.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Client Management - Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="807, 635, 61, 15" FullSelectorArgument="&lt;webctrl id='owner-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='owner-label' tag='LABEL' type='' class='MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rxwt3j' aaname='' check:text='OWNER*' /&gt;" Guid="cbfc8f48-6ac9-47f7-9824-69e188442211" SearchSteps="Selector, FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -446,7 +446,7 @@
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_356" Message="[&quot;TC_16 : To Verify that user should enter project ID : Pass&quot;]" />
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="752,3718.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="752,4260.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -454,7 +454,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <ui:IfElseIfV2 Condition="[in_str_TaxSoftware=&quot;GoSystem Tax RS&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="417.6,3477.6" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                <ui:IfElseIfV2 Condition="[in_str_TaxSoftware=&quot;GoSystem Tax RS&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="449.6,3997.6" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                   <ui:IfElseIfV2.Else>
                     <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_592">
                       <sap:WorkflowViewStateService.ViewState>
@@ -469,14 +469,14 @@
                     <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                       <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSoftware=&quot;CCH Axcess Tax&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
                         <ui:IfElseIfBlock.Then>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,1721.6" sap2010:WorkflowViewState.IdRef="Sequence_589">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,1560.8" sap2010:WorkflowViewState.IdRef="Sequence_589">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Administrati…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_ClientID]" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Administrati…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_ClientID]" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="272, 602, 293, 41" CvTextArea="285, 616, 82, 12" CvTextArgument="TAX CLIENT ID" CvType="InputBox" DesignTimeRectangle="438, 768, 339, 51" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='MuiInputBase-input MuiOutlinedInput-input' tag='INPUT' type='text' aaname='' /&gt;" Guid="0ba91f50-15de-45ba-a816-1ff18107d498" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAScAAAAqCAYAAADxs50rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVHhe7dqxahRRFIdx38UH8AXyAHkBX8DCUkvFRlvBRksbRbAxIIKgRSwsNmyV0cpGENkmhYiFODA2V/6TPePZszNZcTOzB/L94EIyc+furHA/ZjdeKgCQEHECkNJKnJqmKYvFolRVVWazGYPBYIw+1Bt1R/3xujjpxHw+byfVdb08CgDjUm/UHfXHB6qLk05qAMAuxAZ1cdKjFU9MAHZF/VGHTBcnffYDgF3yHSJOANIgTgBSIk4AUiJOAFIiTgBSIk4AUiJOAFIiTgBSIk4AUiJOAFI6tzj9rH+Xq/fflMvXn66NR68/LmeV8vb4a9m7fVBOfvxaHhk+pvW0bqR5mh9fQ8d1jV9HtMa1h4flw5dv7e9a219r19t7uPH4fTvPaD0dO/l+un681q734r3ofLxG9wGg3yhPToqAYtAXljvPjsrerRdrG1Ob1za4NvT+vVddTDydU5j6NnYMgumLUwyQ2Lz9u6uvrfU037+fs96jxHvx7090nc77YwD+mjROtskPjj6vxcHCoGvjRvZ03dC5GATj15az4qTjT959atex+7f79u9n2ziJ1lCE4/0CmDhOtkEtAnFTKhr6uOPD4OmYj0wUg2DidZuenDRP5y0mWm+MOG16P8BFNlmc4kbURo0fzTRHGzpuYqONPvRxT2IQTHxti6CNKzeft+f8PP9a+nmMOInWjf8OACaMk44pAj4K2rx+jjavvpMaCpCPR58YBBOv+5cnJ9H9aN5Ycdr0foCLbLI4aWP6J4S4Mf01Q/EQHY+b3Jx3nPS71tN3UGPESWvwnRPQb5I4DUXDb1htfouXRcHHzGht/bXPAuINvY7W+584iX7WE5/W9SHS8W3ipOP6q2MMFoBTk8RpKAY278HL47XzOjf0VGEbO35nFI/bR0f9/6QYJz9HQ5Hoi5Po3s4jTv717J4B9BslTgCwLeIEICXiBCAl4gQgJeIEICXiBCAl4gQgJeIEICXiBCAl4gQgJeIEIKXeOFVVVeq6Xv4GANNSf9Qh08VpsVi0AwB2ITaoi1PTNGU+n7cneYICMBX1Rt1Rf9Qh08VJdEKT9Gilz34MBoMx9lBv1B0fJlmJEwDkUMofsQzSXntm9wsAAAAASUVORK5CYII=" InformativeScreenshot="74205add3cc857c0e2ff0dd80340e314.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -493,62 +493,79 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </uix:NTypeInto>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click '​'" sap:VirtualizedContainerService.HintSize="382.4,189.6" sap2010:WorkflowViewState.IdRef="NClick_295" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" DesignTimeRectangle="789, 691, 339, 53" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' idx='8' /&gt;" Guid="930505a9-e7f6-4253-8dc3-de413f45e9b3" InformativeScreenshot="1d0caabb0230593b2751ac930a744773.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" CvTextArea="805, 680, 127, 11" CvTextArgument="TAX ACCOUNT NUMBER" CvType="Text" DesignTimeRectangle="807, 677, 125, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='TAX ACCOUNT NUMBER' tag='SPAN' type='' class='' check:innerText='TAX ACCOUNT NUMBER' /&gt;" Guid="06fc1bb9-e794-46d8-869a-4c21ff239ddc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAATCAYAAAC3Dm4YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALVSURBVGhD7ZfNjeJAFIQ5kwOEACEQAieuREAIBEAGREACJEACJAABkAAnTt75vCpUrm0bZpD2Ml1Sy93v/72usZlRU/HrUUlQUUlQUUlQ8YVKgopKgopKgoovVBJU/CXB5XJpRqPRP2u327VG4Hg8NovFornf7+2ZJ2fkQto4SvYCMs/rMc7nczMej5+66XTa3G63oi5zbzab1sZBT6qBvccD2OOnehVbK+3ZI/NZAc/tOQXO8lEfGUM1rNfr9pz9suSjOko6/EtyofMmIBBJvUmBppbLZacZtx/yBTSAPwX5RREPP5cJ+Mzn82LMki5jvUOC2WzWGQr2+DnQ5+AE9Z21fJcEfbNBrnpkJxvl5un7BHGVH1/svJ63SMB5u90WB0QwkpQadez3+6e/hkNBNKVzwotPlHQZz3MJXif7w+HQ8eGZPWKnC0swG2ohDk/Bc5dmw1kxsaMG/L1eYjA31SO7T0gAsp63SOBOkCH1JPEBJLBHT/E0QmOS9xU+RJAhnTf8DglYPlz23yWBeujL7TkFzoqp/BBJMsU7nU4dEvR9Gnnm50A5va7S7F6SACdkHtwHouReUIIC3F+2pXzC/ySB77H/KQl8/xMSXK/Xp7/0Xo/s6B9gx2cIuedOMBOff9bykgQk0F8uQEdQFaIGWchLyLeHfIYuE/iFJkq6jFey8QthzwLUx0D99Su4XSJnhh15kwTpTw2SYafLRaZPCzHR9ZEAqMesw+FzKM3kJQm8GUEyL7DvQt1GcBkFkdMbE7D75IchZ5oWsr+8HOz5S3EfkHaOjEluzry2NQuefnk5K9ez58eq5sPZ931xsg6HX3zJbpAEJQdAwNVq9XwVCezzYkoDzCFo+Fp+Cdj0/RuYurw8QG7p/WJAqTZifEICQI7JZNLJlT3qUgB2ulwW8aRH5yTwflmqi/z5m0A6JwFATo7H49GeOySo+J2oJKioJKhomj9VQ/iOOUDxHAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                  <uix:TargetAnchorable.PointOffset>
-                                    <uix:PointOffset Position="BottomRight" X="-19" Y="-16" />
-                                  </uix:TargetAnchorable.PointOffset>
-                                </uix:TargetAnchorable>
-                              </uix:NClick.Target>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </uix:NClick>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_362" Message="[&quot;TC_08 : To verify that Tc client id at taxcaddy side user should select CCH tax software : Pass&quot;]">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:LogMessage>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_363" Message="[&quot;TC_09 : To verify that Tc client id at taxcaddy side user should Enter CCH tax client ID : Pass&quot;]">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:LogMessage>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '152586'" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="NClick_298" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
-                              <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" DesignTimeRectangle="789, 753, 339, 38" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='option' tag='LI' aaname='{0}' /&gt;&quot;, in_str_AccountNumber)]" Guid="d5382471-0fa5-4325-afb6-a8289db3a8ce" ImageBase64="" InformativeScreenshot="1e0ece036e25dbe144a0f1ece14dd22b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                              </uix:NClick.Target>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </uix:NClick>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_359" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Tax Account Number is &quot;+&quot;&quot;+in_str_AccountNumber]">
+                            <ui:CommentOut DisplayName="Comment Out - Account No" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,193.6" sap2010:WorkflowViewState.IdRef="Sequence_601">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click '​'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_295" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" DesignTimeRectangle="789, 691, 339, 53" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' idx='8' /&gt;" Guid="930505a9-e7f6-4253-8dc3-de413f45e9b3" InformativeScreenshot="1d0caabb0230593b2751ac930a744773.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" CvTextArea="805, 680, 127, 11" CvTextArgument="TAX ACCOUNT NUMBER" CvType="Text" DesignTimeRectangle="807, 677, 125, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='TAX ACCOUNT NUMBER' tag='SPAN' type='' class='' check:innerText='TAX ACCOUNT NUMBER' /&gt;" Guid="06fc1bb9-e794-46d8-869a-4c21ff239ddc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAATCAYAAAC3Dm4YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALVSURBVGhD7ZfNjeJAFIQ5kwOEACEQAieuREAIBEAGREACJEACJAABkAAnTt75vCpUrm0bZpD2Ml1Sy93v/72usZlRU/HrUUlQUUlQUUlQ8YVKgopKgopKgoovVBJU/CXB5XJpRqPRP2u327VG4Hg8NovFornf7+2ZJ2fkQto4SvYCMs/rMc7nczMej5+66XTa3G63oi5zbzab1sZBT6qBvccD2OOnehVbK+3ZI/NZAc/tOQXO8lEfGUM1rNfr9pz9suSjOko6/EtyofMmIBBJvUmBppbLZacZtx/yBTSAPwX5RREPP5cJ+Mzn82LMki5jvUOC2WzWGQr2+DnQ5+AE9Z21fJcEfbNBrnpkJxvl5un7BHGVH1/svJ63SMB5u90WB0QwkpQadez3+6e/hkNBNKVzwotPlHQZz3MJXif7w+HQ8eGZPWKnC0swG2ohDk/Bc5dmw1kxsaMG/L1eYjA31SO7T0gAsp63SOBOkCH1JPEBJLBHT/E0QmOS9xU+RJAhnTf8DglYPlz23yWBeujL7TkFzoqp/BBJMsU7nU4dEvR9Gnnm50A5va7S7F6SACdkHtwHouReUIIC3F+2pXzC/ySB77H/KQl8/xMSXK/Xp7/0Xo/s6B9gx2cIuedOMBOff9bykgQk0F8uQEdQFaIGWchLyLeHfIYuE/iFJkq6jFey8QthzwLUx0D99Su4XSJnhh15kwTpTw2SYafLRaZPCzHR9ZEAqMesw+FzKM3kJQm8GUEyL7DvQt1GcBkFkdMbE7D75IchZ5oWsr+8HOz5S3EfkHaOjEluzry2NQuefnk5K9ez58eq5sPZ931xsg6HX3zJbpAEJQdAwNVq9XwVCezzYkoDzCFo+Fp+Cdj0/RuYurw8QG7p/WJAqTZifEICQI7JZNLJlT3qUgB2ulwW8aRH5yTwflmqi/z5m0A6JwFATo7H49GeOySo+J2oJKioJKhomj9VQ/iOOUDxHAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                        <uix:TargetAnchorable.PointOffset>
+                                          <uix:PointOffset Position="BottomRight" X="-19" Y="-16" />
+                                        </uix:TargetAnchorable.PointOffset>
+                                      </uix:TargetAnchorable>
+                                    </uix:NClick.Target>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NClick>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '152586'" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="NClick_298" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" DesignTimeRectangle="789, 753, 339, 38" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='option' tag='LI' aaname='{0}' /&gt;&quot;, in_str_AccountNumber)]" Guid="d5382471-0fa5-4325-afb6-a8289db3a8ce" ImageBase64="" InformativeScreenshot="1e0ece036e25dbe144a0f1ece14dd22b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </uix:NClick>
+                                </Sequence>
+                              </ui:CommentOut.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_362" Message="[&quot;TC_08 : To verify that Tc client id at taxcaddy side user should select CCH tax software : Pass&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
-                            <s:SanityReport_TCFiltering in_strComments="{x:Null}" in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="382.4,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_7" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_08&quot;,&quot;TC_09&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="TC_Profile">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_363" Message="[&quot;TC_09 : To verify that Tc client id at taxcaddy side user should Enter CCH tax client ID : Pass&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_359" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Tax Account Number is &quot;+&quot;&quot;+in_str_AccountNumber]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                            <s:SanityReport_TCFiltering in_strComments="{x:Null}" in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="353.6,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_7" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_08&quot;,&quot;TC_09&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="TC_Profile">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -556,7 +573,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </s:SanityReport_TCFiltering>
-                            <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="382.4,321.6" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_7" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
+                            <o:OCS_GenerateReportOutput in_strBinderID="{x:Null}" sap:VirtualizedContainerService.HintSize="353.6,321.6" sap2010:WorkflowViewState.IdRef="OCS_GenerateReportOutput_7" in_Config="[in_Config]" in_SanityTestFilesheetName="[in_Config(&quot;SanityReport_FilesheetName&quot;).ToString]" in_TransactionItem="[in_TransactionItem]" in_dtTestSummaryReport="[io_dt_TestSummaryReport]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -569,14 +586,14 @@
                       </ui:IfElseIfBlock>
                       <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_str_TaxSoftware=&quot;Lacerte&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
                         <ui:IfElseIfBlock.Then>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,951.2" sap2010:WorkflowViewState.IdRef="Sequence_590">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,980" sap2010:WorkflowViewState.IdRef="Sequence_590">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Administrati…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_ClientID]" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Administrati…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_ClientID]" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="272, 602, 293, 41" CvTextArea="285, 616, 82, 12" CvTextArgument="TAX CLIENT ID" CvType="InputBox" DesignTimeRectangle="438, 768, 339, 51" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='MuiInputBase-input MuiOutlinedInput-input' tag='INPUT' type='text' aaname='' /&gt;" Guid="0ba91f50-15de-45ba-a816-1ff18107d498" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAScAAAAqCAYAAADxs50rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVHhe7dqxahRRFIdx38UH8AXyAHkBX8DCUkvFRlvBRksbRbAxIIKgRSwsNmyV0cpGENkmhYiFODA2V/6TPePZszNZcTOzB/L94EIyc+furHA/ZjdeKgCQEHECkNJKnJqmKYvFolRVVWazGYPBYIw+1Bt1R/3xujjpxHw+byfVdb08CgDjUm/UHfXHB6qLk05qAMAuxAZ1cdKjFU9MAHZF/VGHTBcnffYDgF3yHSJOANIgTgBSIk4AUiJOAFIiTgBSIk4AUiJOAFIiTgBSIk4AUiJOAFI6tzj9rH+Xq/fflMvXn66NR68/LmeV8vb4a9m7fVBOfvxaHhk+pvW0bqR5mh9fQ8d1jV9HtMa1h4flw5dv7e9a219r19t7uPH4fTvPaD0dO/l+un681q734r3ofLxG9wGg3yhPToqAYtAXljvPjsrerRdrG1Ob1za4NvT+vVddTDydU5j6NnYMgumLUwyQ2Lz9u6uvrfU037+fs96jxHvx7090nc77YwD+mjROtskPjj6vxcHCoGvjRvZ03dC5GATj15az4qTjT959atex+7f79u9n2ziJ1lCE4/0CmDhOtkEtAnFTKhr6uOPD4OmYj0wUg2DidZuenDRP5y0mWm+MOG16P8BFNlmc4kbURo0fzTRHGzpuYqONPvRxT2IQTHxti6CNKzeft+f8PP9a+nmMOInWjf8OACaMk44pAj4K2rx+jjavvpMaCpCPR58YBBOv+5cnJ9H9aN5Ycdr0foCLbLI4aWP6J4S4Mf01Q/EQHY+b3Jx3nPS71tN3UGPESWvwnRPQb5I4DUXDb1htfouXRcHHzGht/bXPAuINvY7W+584iX7WE5/W9SHS8W3ipOP6q2MMFoBTk8RpKAY278HL47XzOjf0VGEbO35nFI/bR0f9/6QYJz9HQ5Hoi5Po3s4jTv717J4B9BslTgCwLeIEICXiBCAl4gQgJeIEICXiBCAl4gQgJeIEICXiBCAl4gQgJeIEIKXeOFVVVeq6Xv4GANNSf9Qh08VpsVi0AwB2ITaoi1PTNGU+n7cneYICMBX1Rt1Rf9Qh08VJdEKT9Gilz34MBoMx9lBv1B0fJlmJEwDkUMofsQzSXntm9wsAAAAASUVORK5CYII=" InformativeScreenshot="74205add3cc857c0e2ff0dd80340e314.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -593,7 +610,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </uix:NTypeInto>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_365" Message="[&quot;TC_14 : To verify that Tc client id at taxcaddy side user should select Lacerte  tax software : Pass&quot;]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_365" Message="[&quot;TC_14 : To verify that Tc client id at taxcaddy side user should select Lacerte  tax software : Pass&quot;]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -601,7 +618,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_366" Message="[&quot;TC_15 : To verify that Tc client id at taxcaddy side user should Enter Lacerte tax client ID : Pass&quot;]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_366" Message="[&quot;TC_15 : To verify that Tc client id at taxcaddy side user should Enter Lacerte tax client ID : Pass&quot;]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -609,7 +626,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
-                            <s:SanityReport_TCFiltering in_strComments="{x:Null}" in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="382.4,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_8" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_14&quot;,&quot;TC_15&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="TC_Profile">
+                            <s:SanityReport_TCFiltering in_strComments="{x:Null}" in_strExceptionMessage="{x:Null}" in_strExceptionScreenshot="{x:Null}" sap:VirtualizedContainerService.HintSize="353.6,434.4" sap2010:WorkflowViewState.IdRef="SanityReport_TCFiltering_8" inOut_dtTestSummaryReport="[io_dt_TestSummaryReport]" in_listTestCaseID="[New List(Of String) From {&quot;TC_14&quot;,&quot;TC_15&quot;}]" in_strStatus="[&quot;Pass&quot;]" in_strSubComponent="TC_Profile">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -698,10 +715,10 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:IfElseIfV2.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_588">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,596.8" sap2010:WorkflowViewState.IdRef="Sequence_588">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -722,37 +739,54 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NTypeInto>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click '​'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_296" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" DesignTimeRectangle="789, 691, 339, 53" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' idx='8' /&gt;" Guid="930505a9-e7f6-4253-8dc3-de413f45e9b3" InformativeScreenshot="1d0caabb0230593b2751ac930a744773.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" CvTextArea="805, 680, 127, 11" CvTextArgument="TAX ACCOUNT NUMBER" CvType="Text" DesignTimeRectangle="807, 677, 125, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='TAX ACCOUNT NUMBER' tag='SPAN' type='' class='' check:innerText='TAX ACCOUNT NUMBER' /&gt;" Guid="06fc1bb9-e794-46d8-869a-4c21ff239ddc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAATCAYAAAC3Dm4YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALVSURBVGhD7ZfNjeJAFIQ5kwOEACEQAieuREAIBEAGREACJEACJAABkAAnTt75vCpUrm0bZpD2Ml1Sy93v/72usZlRU/HrUUlQUUlQUUlQ8YVKgopKgopKgoovVBJU/CXB5XJpRqPRP2u327VG4Hg8NovFornf7+2ZJ2fkQto4SvYCMs/rMc7nczMej5+66XTa3G63oi5zbzab1sZBT6qBvccD2OOnehVbK+3ZI/NZAc/tOQXO8lEfGUM1rNfr9pz9suSjOko6/EtyofMmIBBJvUmBppbLZacZtx/yBTSAPwX5RREPP5cJ+Mzn82LMki5jvUOC2WzWGQr2+DnQ5+AE9Z21fJcEfbNBrnpkJxvl5un7BHGVH1/svJ63SMB5u90WB0QwkpQadez3+6e/hkNBNKVzwotPlHQZz3MJXif7w+HQ8eGZPWKnC0swG2ohDk/Bc5dmw1kxsaMG/L1eYjA31SO7T0gAsp63SOBOkCH1JPEBJLBHT/E0QmOS9xU+RJAhnTf8DglYPlz23yWBeujL7TkFzoqp/BBJMsU7nU4dEvR9Gnnm50A5va7S7F6SACdkHtwHouReUIIC3F+2pXzC/ySB77H/KQl8/xMSXK/Xp7/0Xo/s6B9gx2cIuedOMBOff9bykgQk0F8uQEdQFaIGWchLyLeHfIYuE/iFJkq6jFey8QthzwLUx0D99Su4XSJnhh15kwTpTw2SYafLRaZPCzHR9ZEAqMesw+FzKM3kJQm8GUEyL7DvQt1GcBkFkdMbE7D75IchZ5oWsr+8HOz5S3EfkHaOjEluzry2NQuefnk5K9ez58eq5sPZ931xsg6HX3zJbpAEJQdAwNVq9XwVCezzYkoDzCFo+Fp+Cdj0/RuYurw8QG7p/WJAqTZifEICQI7JZNLJlT3qUgB2ulwW8aRH5yTwflmqi/z5m0A6JwFATo7H49GeOySo+J2oJKioJKhomj9VQ/iOOUDxHAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                            <uix:TargetAnchorable.PointOffset>
-                              <uix:PointOffset Position="BottomRight" X="-19" Y="-16" />
-                            </uix:TargetAnchorable.PointOffset>
-                          </uix:TargetAnchorable>
-                        </uix:NClick.Target>
+                      <ui:CommentOut DisplayName="Comment Out - Account No" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,193.6" sap2010:WorkflowViewState.IdRef="Sequence_600">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click '​'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_296" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="cpa.taxcaddy.com/cpa.html" CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" DesignTimeRectangle="789, 691, 339, 53" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' idx='8' /&gt;" Guid="930505a9-e7f6-4253-8dc3-de413f45e9b3" InformativeScreenshot="1d0caabb0230593b2751ac930a744773.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="d8b3d8b4-a98c-496a-ab47-9d93b472fd99" CvTextArea="805, 680, 127, 11" CvTextArgument="TAX ACCOUNT NUMBER" CvType="Text" DesignTimeRectangle="807, 677, 125, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='TAX ACCOUNT NUMBER' tag='SPAN' type='' class='' check:innerText='TAX ACCOUNT NUMBER' /&gt;" Guid="06fc1bb9-e794-46d8-869a-4c21ff239ddc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAATCAYAAAC3Dm4YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALVSURBVGhD7ZfNjeJAFIQ5kwOEACEQAieuREAIBEAGREACJEACJAABkAAnTt75vCpUrm0bZpD2Ml1Sy93v/72usZlRU/HrUUlQUUlQUUlQ8YVKgopKgopKgoovVBJU/CXB5XJpRqPRP2u327VG4Hg8NovFornf7+2ZJ2fkQto4SvYCMs/rMc7nczMej5+66XTa3G63oi5zbzab1sZBT6qBvccD2OOnehVbK+3ZI/NZAc/tOQXO8lEfGUM1rNfr9pz9suSjOko6/EtyofMmIBBJvUmBppbLZacZtx/yBTSAPwX5RREPP5cJ+Mzn82LMki5jvUOC2WzWGQr2+DnQ5+AE9Z21fJcEfbNBrnpkJxvl5un7BHGVH1/svJ63SMB5u90WB0QwkpQadez3+6e/hkNBNKVzwotPlHQZz3MJXif7w+HQ8eGZPWKnC0swG2ohDk/Bc5dmw1kxsaMG/L1eYjA31SO7T0gAsp63SOBOkCH1JPEBJLBHT/E0QmOS9xU+RJAhnTf8DglYPlz23yWBeujL7TkFzoqp/BBJMsU7nU4dEvR9Gnnm50A5va7S7F6SACdkHtwHouReUIIC3F+2pXzC/ySB77H/KQl8/xMSXK/Xp7/0Xo/s6B9gx2cIuedOMBOff9bykgQk0F8uQEdQFaIGWchLyLeHfIYuE/iFJkq6jFey8QthzwLUx0D99Su4XSJnhh15kwTpTw2SYafLRaZPCzHR9ZEAqMesw+FzKM3kJQm8GUEyL7DvQt1GcBkFkdMbE7D75IchZ5oWsr+8HOz5S3EfkHaOjEluzry2NQuefnk5K9ez58eq5sPZ931xsg6HX3zJbpAEJQdAwNVq9XwVCezzYkoDzCFo+Fp+Cdj0/RuYurw8QG7p/WJAqTZifEICQI7JZNLJlT3qUgB2ulwW8aRH5yTwflmqi/z5m0A6JwFATo7H49GeOySo+J2oJKioJKhomj9VQ/iOOUDxHAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                  <uix:TargetAnchorable.PointOffset>
+                                    <uix:PointOffset Position="BottomRight" X="-19" Y="-16" />
+                                  </uix:TargetAnchorable.PointOffset>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '152586'" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="NClick_297" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" DesignTimeRectangle="789, 753, 339, 38" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='option' tag='LI' aaname='{0}' /&gt;&quot;, in_str_AccountNumber)]" Guid="d5382471-0fa5-4325-afb6-a8289db3a8ce" ImageBase64="" InformativeScreenshot="1e0ece036e25dbe144a0f1ece14dd22b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                          </Sequence>
+                        </ui:CommentOut.Body>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '152586'" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="NClick_297" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" DesignTimeRectangle="789, 753, 339, 38" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='option' tag='LI' aaname='{0}' /&gt;&quot;, in_str_AccountNumber)]" Guid="d5382471-0fa5-4325-afb6-a8289db3a8ce" ImageBase64="" InformativeScreenshot="1e0ece036e25dbe144a0f1ece14dd22b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                        </uix:NClick.Target>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </uix:NClick>
+                      </ui:CommentOut>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_360" Message="[&quot;TC_10 : To verify that Tc client id at taxcaddy side user should select GO system tax software : Pass&quot;]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1028,7 +1062,7 @@
                 <Sequence DisplayName="Finally" sap2010:WorkflowViewState.IdRef="Sequence_599" />
               </TryCatch.Finally>
             </TryCatch>
-            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'SAVE'" sap:VirtualizedContainerService.HintSize="486.4,189.6" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'SAVE'" sap:VirtualizedContainerService.HintSize="752,189.6" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="1087, 782, 101, 35" CvTextArea="1123, 793, 30, 12" CvTextArgument="SAVE" CvType="Button" DesignTimeRectangle="1104, 789, 68, 21" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='SAVE' class='MuiButton-label' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='SAVE' class='MuiButton-label' tag='SPAN' type='' check:innerText='SAVE' /&gt;" Guid="238da2b2-3a7b-48ed-a3f4-fe4e483abc14" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAZCAYAAACSP2gVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVFhH7ZZBCoMwEEV7jN7RM3gfwQt4AfEIQtaCK0EQN26mThqbyaQ6ixqhMgNv0WQs/NdM7ONZZaDso4IEVJCAChJQQQIqSEAFCagggbSCuh6CWgzk0X4PBVnLhxnGofQ9jmICMN17nxeu8/6zSCeoNTCy8JxiWmUsLCA+x0VWDRj3XXsCU5FOEJ6OKChlDY372Dc1ZL2Eepmhbkkv6bmPIPurw24YHxSFHI/ZNl7f9lKT/JLGcLYOTgmG3h0zNqrYG9bxGP9KckEbNlgQmlUwjl6gfY7Ivd0J8oQXbfjmie+dTQQdL7q+fU7NdYI+l7YXRfej4HbM1jXWex9B9j8OLRc0ems5otc7nqr4kkdBvMLTeC4Xjth/ooIEVJCAChJQQQIqSEAFCaigQzJ4AWx2TXYkEzeMAAAAAElFTkSuQmCC" InformativeScreenshot="580182524413fd107caf925b7d1f7cf3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -1039,8 +1073,8 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_357" Message="[&quot;TC_17 : To verify that user should click on save button : Pass&quot;]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_351" Message="[&quot;TC_01 : To verify that Create TC Client Profile at TaxCaddy   : Pass&quot;]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_357" Message="[&quot;TC_17 : To verify that user should click on save button : Pass&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_351" Message="[&quot;TC_01 : To verify that Create TC Client Profile at TaxCaddy   : Pass&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1048,7 +1082,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <Assign sap:VirtualizedContainerService.HintSize="486.4,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="752,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[dtEndTime]</OutArgument>
               </Assign.To>
@@ -1056,9 +1090,9 @@
                 <InArgument x:TypeArguments="x:String">[Now.ToString("hh:mm:ss")]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[in_Config(&quot;TestSummary_EndTimeTCIndex&quot;).ToString]" DisplayName="Process Start Time" sap:VirtualizedContainerService.HintSize="486.4,148" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[in_Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[dtEndTime]" WorkbookPath="[in_Config(&quot;SanityReport_ReportPath&quot;).ToString.Split(&quot;.xlsx&quot;)(0)+&quot;_&quot;+in_TransactionItem.SpecificContent(&quot;FirstName&quot;).ToString+&quot;.xlsx&quot;]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Client info has been created&quot;]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Administrati…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="486.4,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_FirstName+ &quot; &quot;+in_str_LastName]" Version="V3">
+            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[in_Config(&quot;TestSummary_EndTimeTCIndex&quot;).ToString]" DisplayName="Process Start Time" sap:VirtualizedContainerService.HintSize="752,148" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[in_Config(&quot;SanityReport_SummaryReportsheetName&quot;).ToString]" Text="[dtEndTime]" WorkbookPath="[in_Config(&quot;SanityReport_ReportPath&quot;).ToString.Split(&quot;.xlsx&quot;)(0)+&quot;_&quot;+in_TransactionItem.SpecificContent(&quot;FirstName&quot;).ToString+&quot;.xlsx&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="752,176" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Client info has been created&quot;]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Administrati…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="752,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="f835edcc-3321-400f-aeb1-ed9441691a76" Text="[in_str_FirstName+ &quot; &quot;+in_str_LastName]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://cpa.taxcaddy.com/#/cpa/admin/clients/2022" CvElementArea="988, 348, 329, 41" CvTextArea="1004, 363, 115, 12" CvTextArgument="SEARCH CLIENT LIST" CvType="InputBox" DesignTimeRectangle="991, 350, 286, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd' aaname='' /&gt;" Guid="eb390ab2-b87a-4676-974d-463c3f28c10a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASIAAAAqCAYAAAAXmlZvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMwSURBVHhe7do9bqNAGMbxvcteLNXeIlXO4H7LFCkjuU1huySSj0BjKQdAcjU77wwf88FHiIGXlf4/aaTYwGDAz7Ng7S8DAMooIgDqoiK63++mLEtTFIU5nU4MBoOxyWiLSErofD67Iqqqqn4XANbXFpEUkAwA2FpbRPI4xp0QAA1tEclzGgBooIgAqKOIAKijiACoo4gAqKOIAKijiACoo4gAqKOIAKijiACoo4gAqFumiD7fze8/f7vx/GG++t634+l4c5s0vo6v3fqtq3mZ2G54HXn/3RR+pZbsJ5+j4z5HNJ+fY3A7ObbDtX5xM2/P4bbd9v4cvJq3ZAqZ9+VT/sqPoxl+eWf4GJJj7rsePdfCj/xcAVt7vIhuH+Zp6MschbWPBNiGy444qGmZ+KB3wfThTYPqzS8iV0JZGXrfL6K8bBy7nhxfeh66IgpMnK9vFdHY9agVh6FzB+h4vIgkPAMhniwiCY1dngcsLxMJT7NO+HduZhFNBHeRIjpekyJdsYjGrkeNIsLeLPBoJiEYKIaJYHWBsHNE4UnLJAz6SOidmUX00/BH240XkVsvKbzVimjsetQoIuzNYj9Wy5fb/eYQBkmC5X6HaEYY1rgwikO6bGy7qSIKt+1GXzgl3MsUUbK/ZlmwXriv9YrI670eNYoIe7NYETVc2Jq7m7FgZSUVhiYMVlo8/+kdkdMdy9pF1IiuR40iwt4sXkRRKEaCFd8BiTBMcbBcmIJ5JEj9gRT9oRwM8Qa/EUXnQF7bYijsvFsUUd8yigh7s3wR1UEbvSOS8Cf/SosuIGl4kqC78hgI/twismS/QwWweBFZbn/2DnCTIgqvR40iwt48XkTyRY8esYJAZMv8ncx0uHuClQVK1gnnbopgfhEJWR5+zqYQsvftcCFuP6uQIorXif4fUVourkh/VkTxPnqKW+aI1snPBUWEvVnh0QwA5qGIAKijiACoo4gAqKOIAKijiACoo4gAqKOIAKijiACoo4gAqGuLqCgKU1VV/QoAttMWUVmWbgDA1toiut/v5nK5uDLizgjAltoiElJGUkTymCa/GTEYDMYWIyoiANBAEQFQZsw/Hd4PD+fiPoUAAAAASUVORK5CYII=" InformativeScreenshot="84a5baa588d9785fbd32f9ed61fb8475.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Administrative - TaxCaddy CPA' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
